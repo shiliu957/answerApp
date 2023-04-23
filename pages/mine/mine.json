@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "我的",
+  "usingComponents": {
+    "van-collapse":"/miniprogram_npm/vant-weapp/collapse",
+    "van-collapse-item":"/miniprogram_npm/vant-weapp/collapse-item",
+    "login":"/pages/authorize/authorize",
+    "van-icon":"/miniprogram_npm/vant-weapp/icon"
+  }
+}

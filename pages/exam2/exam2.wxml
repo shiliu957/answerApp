@@ -1,0 +1,37 @@
+<!--pages/exam2/exam2.wxml-->
+
+	<view class="">
+		<view class="">
+			<text>1.【判断题】 雨篷板是受弯构件。</text>
+			</view>
+			
+			<view class="" style="margin-top: 20rpx;">
+        <radio-group class="radio-group" style="display: flex;flex-direction: column;">
+        <label class="radio" >
+          <radio />
+          A、正确
+        </label>
+        <label class="radio" >
+          <radio style="margin-top: 10rpx;" />
+          B、错误
+        </label>
+      </radio-group>
+			</view>
+		<view class="" style="margin-top: 20rpx; text-align: center;display: flex;">
+			<button type="primary" style="width: 40%;background: #409eff;">上一题</button>
+			<button type="primary" style="width: 40%;background: #409eff;">下一题</button>
+		</view>
+
+    <van-tabbar v-model="active">
+  <van-tabbar-item icon="setting-o">设置</van-tabbar-item>
+  <van-tabbar-item icon="star-o">收藏</van-tabbar-item>
+  <!-- <van-count-down millisecond :time="time" format="mm:ss:SS" /> -->
+  <button style="background-color: #409eff; width: 260rpx; height: 90rpx; font-size: 32rpx; color: white; " >提交试卷</button>
+</van-tabbar>
+
+
+	</view>
+
+
+
+

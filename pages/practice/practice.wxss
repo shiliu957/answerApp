@@ -1,0 +1,33 @@
+/* pages/practice/practice.wxss */
+.container {
+	padding: 10rpx;
+}
+.scrollItem {
+	box-sizing: border-box;
+	width: 95%;
+	height: 200rpx;
+	border-radius: 15rpx;
+	margin-top: 20rpx;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	padding: 10rpx;
+	box-shadow: 0 0 1rpx 1rpx #ccc;
+}
+
+.itemBottom {
+	display: flex;
+    font-size: 30rpx;
+    align-items: center;
+}
+.Btn {
+	width: 260rpx;
+	height: 60rpx;
+	font-size: 30rpx;
+    line-height: 60rpx;
+    text-align: center;
+	border-radius: 30rpx 0;
+	background-color: #4e8df6;
+	color: #fff;
+	margin-left: 20rpx;
+}

@@ -1,0 +1,42 @@
+ <swiper class="swiper-wrap" indicator-dots="{{true}}" autoplay="{{true}}" interval="6000" duration="500" style="height: 480rpx;" >
+  <swiper-item>
+    <image src="../../static/images/1.png" mode="aspectFill"></image>
+  </swiper-item>
+  <swiper-item>
+    <image src="../../static/images/2.png" mode="aspectFill"></image>
+  </swiper-item>
+  <swiper-item>
+    <image src="../../static/images/3.png" mode="aspectFill"></image>
+  </swiper-item>
+  <swiper-item>
+    <image src="../../static/images/4.png" mode="aspectFill"></image>
+  </swiper-item>
+</swiper>
+
+<view class="box">
+  <!-- <view wx:for="{{4}}" class="box-item">
+    <view>练习题</view>
+    <view>针对于考试的章节练习</view>
+  </view> -->
+
+  <view class="box1" bindtap="practiceClick">
+			<p>习题练习</p>
+			<span>针对于考试的章节练习</span>
+    <!-- <image src="../../static/homeIcons/书.png" mode="" style="width: 100rpx; height: 100rpx; " /> -->
+		</view>
+		<view class="box2" bindtap="examClick">
+			<p>考试</p>
+			<span>点击进行考试</span>
+			<!-- 			<img src="/static/homeIcons/考试.png" alt="" /> -->
+		</view>
+		<view class="box3" bindtap="videoList">
+			<p>视频列表</p>
+			<span>针对于考试的视频讲解</span>
+		</view>
+		<view class="box4" bindtap="articleList">
+			<p>讲义列表</p>
+			<span>本专业的最新文章</span>
+		</view>
+
+
+</view>

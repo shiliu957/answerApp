@@ -1,0 +1,61 @@
+<!--pages/judge/judge.wxml-->
+<view class="containerIndex">
+	<view class="header">
+		<text>1/10</text>
+		<view class="header-right">
+			<view class="timer">
+				<image src="../../static/practice/jishiqi.png" mode=""></image>
+				<view>{{ cTime }}</view>
+			</view>
+			<view class="collect" bindtap="change">
+				<image wx:if="flag" src="../../static/practice/icon_shoucang_default.png" mode=""></image>
+				<image wx:else src="../../static/practice/icon_shoucang_selected.png" mode=""></image>
+			</view>
+			<view bindtap="goLook">
+				<image src="../../static/practice/mulu_icon_c.png" mode=""></image>
+			</view>
+		</view>
+	</view>
+
+	<swiper class="main" :current="current" bindchange="changeSwiper">
+		<swiper-item>
+			<view class="mainItem">
+				<view class="title" bindtap="abc">单选题</view>
+				<view class="topic">{{ exam.a.title }}</view>
+				<view class="tab">
+					<block wx:for="{{exam.b}}" wx:key="index">
+						<view class="tabItem {{is_yes && is_if == index ? 'right':''}} {{!is_yes && exam.a.key == item.choice  ? 'right':''}} {{!is_yes && is_if == index ? 'error':'' }}" style="pointer-events: {{ban ? 'none':'auto'}}" bindtap="select" data-choice="{{item.choice}}" data-index="{{index}}">
+							<text class="A">{{ item.choice }}</text>
+							<text>{{ item.content }}</text>
+						</view>
+					</block>
+				</view>
+			</view>
+		</swiper-item>
+		<swiper-item>
+			<view class="mainItem">
+				<view class="title">单选题</view>
+				<view class="topic">快速以太网和传统以太网在（）上的标准不同。</view>
+				<view class="tab">
+					<view class="tabItem">
+						<text class="A">A</text>
+						<text>逻辑链路控制子层</text>
+					</view>
+					<view class="tabItem">
+						<text class="A">B</text>
+						<text>网络层</text>
+					</view>
+					<view class="tabItem">
+						<text class="A">C</text>
+						<text>介质访问控制子层</text>
+					</view>
+					<view class="tabItem">
+						<text class="A">D</text>
+						<text>物理层</text>
+					</view>
+				</view>
+			</view>
+		</swiper-item>
+	</swiper>
+
+</view>

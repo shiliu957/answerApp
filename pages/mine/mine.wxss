@@ -1,0 +1,49 @@
+.wrap {
+  width: 100%;
+  height: 100vh;
+  background-color: #4e8df6;
+}
+
+.title {
+  width: 90%;
+  height: 100rpx;
+  padding-top: 100rpx;
+  margin: 0 50rpx;
+  display: flex;
+}
+
+.title image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background-color: antiquewhite;
+  margin-top: -40rpx;
+}
+
+.title .name {
+  font-size: 40rpx;
+  /* margin-top: 30rpx; */
+  margin-top: -5rpx;
+  margin-left: 30rpx;
+  color: #fff;
+  font-weight: 700;
+}
+
+.box {
+  height: 70%;
+  width: 100%;
+  z-index: 99;
+  background: #fff;
+  position: fixed;
+  bottom: 0;
+  border-radius: 40rpx 40rpx 0 0;
+   padding-top: 100rpx;
+}
+.box p{
+  margin-left: 50rpx;
+}
+.box span{
+  float: right;
+  margin-right: 50rpx;
+  color: #ccc;
+}

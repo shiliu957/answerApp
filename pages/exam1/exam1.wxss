@@ -1,0 +1,44 @@
+.container{
+  width: 100%;
+  height: 100%;
+}
+
+.titleWarp{
+  margin-top: -60rpx;
+  display: flex;
+  flex-direction: column;
+}
+.title_content{
+  text-indent: 80rpx;
+}
+.tit_left{
+  margin-right: 30rpx;
+  color: rgb(155, 152, 152);
+}
+.radio_warp{
+  display: flex;
+  /* text-indent: 150rpx; */
+  margin:  40rpx 0 0 80rpx;
+}
+.radio{
+  margin-top: 10rpx;
+
+}
+.radio_my{
+  display: flex;
+  flex-direction: column;
+  margin-left: 30rpx;
+  /* margin-left: -200rpx; */
+}
+.btn{
+  display: block;
+  width: 350rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  border-radius: 30rpx;
+  color: #fff;
+  margin: 100rpx auto;
+  font-weight: 600;
+  background: #409eff;
+}

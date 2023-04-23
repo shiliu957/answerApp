@@ -1,0 +1,13 @@
+<!--pages/practice/practice.wxml-->
+<view class="container">
+    <view class="scrollItem" wx:for="item in 5" wx:key="item" style=" box-shadow: 0 0 15rpx #ccc;" >
+        <view class="itemTop"><text>2023年02月28日每日一练</text></view>
+        <view class="itemBottom">
+            <view>
+                答题时间：<text style="color: yellowgreen;">30</text>
+                分钟 总分：<text style="color: lightblue">100</text>
+            </view>
+            <view class="Btn" bindtap="begin">开始答题</view>
+        </view>
+    </view>
+</view>

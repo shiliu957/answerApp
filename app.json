@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/category/category",
+    "pages/mine/mine",
+    "pages/practice/practice",
+    "pages/exam/exam",
+    "pages/exam1/exam1",
+    "pages/exam2/exam2",
+    "pages/judge/judge",
+    "pages/AnswerRecord/AnswerRecord",
+    "pages/TestScore/TestScore",
+    "pages/MyVideos/MyVideos",
+    "pages/MyArticles/MyArticles",
+    "pages/authorize/authorize"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#CBE2F9",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#4e8df6",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "主页",
+        "iconPath": "/static/images/tabBar/主页2.png",
+        "selectedIconPath": "/static/images/tabBar/主页1.png"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "分类",
+        "iconPath": "/static/images/tabBar/category1.png",
+        "selectedIconPath": "/static/images/tabBar/分类.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "/static/images/tabBar/mine1.png",
+        "selectedIconPath": "/static/images/tabBar/我的.png"
+      }
+    ]
+  }
+}
