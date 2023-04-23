@@ -1,8 +1,0 @@
-{
-  "usingComponents": {
-    "van-tabbar":"/miniprogram_npm/vant-weapp/tabbar",
-    "van-tabbar-item":"/miniprogram_npm/vant-weapp/tabbar-item",
-    "van-icon":"/miniprogram_npm/vant-weapp/icon"
-
-  }
-}

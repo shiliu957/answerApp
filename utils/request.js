@@ -1,10 +1,13 @@
 
 const baseUrl = 'https://eiom.totwoo.com'
-export default {
+module.exports = {
     request: (url, method, data) => {
         let _url = `${baseUrl}${url}`;
-        console.log(_url);
+      console.log(_url,method,data,"fasongzhiqian");
         return new Promise((resolve, reject) => {
+          let head = true
+          if (url === "/api/member/login") head = false 
+          console.log(head,"zhenjia");
 			wx.showLoading({
 				title: '正在加载',
 			});
@@ -12,15 +15,15 @@ export default {
                 url: _url,
                 data: data,
                 method: method,
-                header: {
-                    'content-type': 'application/x-www-form-urlencoded',
-                    "authorization": wx.getStorageSync('token')
-                },
+                header: head ? {
+
+                  "authorization": wx.getStorageSync('token')
+                } : {                  'content-type':'application/x-www-form-urlencoded',},
                 success: (res) => {
                     console.log('从接口获取到的数据', res);
-					let { code } = res.data;
-					if(code===0) {
-						resolve(res.data);
+					let { errorMsg } = res.data;
+					if(errorMsg==='success') {
+						resolve(res.data.data);
 						wx.hideLoading();
 					}else {
 						wx.showToast({

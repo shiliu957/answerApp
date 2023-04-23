@@ -5,8 +5,6 @@
     "pages/mine/mine",
     "pages/practice/practice",
     "pages/exam/exam",
-    "pages/exam1/exam1",
-    "pages/exam2/exam2",
     "pages/judge/judge",
     "pages/AnswerRecord/AnswerRecord",
     "pages/TestScore/TestScore",

@@ -1,6 +1,6 @@
 // pages/mine/mine.js
 // 引入请求函数
-import {login} from "../../api/login"
+const {login,userinfo} = require("../../api/login") 
 
 Page({
   /**
@@ -49,13 +49,6 @@ Page({
       activeName: e.detail
     })
   },
- async login() {
-  let res = await login({
-    js_code: code,
-    // grant_type:'authorization_code'
-  })
-  console.log(res,"*********");
- },
   async getUserProfile(e) {
     let userInfo = this.data.userInfo
     if (userInfo !== null) return
@@ -65,7 +58,6 @@ Page({
     success(res){
       console.log(res.userInfo,"wwwwwwww");
       var user = res.userInfo
-      let {avatarUrl,city,country,gender,language,nickName,province} = user
       that.setData({
         userInfo:user
       })
@@ -73,42 +65,25 @@ Page({
           success: res => {
             // 发送 res.code 到后台换取 openId, sessionKey, unionId
             let code = res.code
-           let go = that.login({
+            console.log(code,"这是舍呢");
+            login({
               js_code: code,
-              // grant_type:'authorization_code'
-            })
-            console.log(go,"fanhuideshuju");
-            wx.request({
-              url: 'https://eiom.totwoo.com/api/member/login',
-              mothod:'POST',
-              // mothod:'GET',
-              data:{
-                js_code: code,
-                // grant_type:'authorization_code'
-              },
-              success:(res) => {
-                wx.setStorageSync('token',res.data.data.token)
-              },
-              fail:(err)=>{
-                console.log("失败",res);
-              }
-            })
-          //  let res = request("/api/member/login",{ js_code: code})
-          //  wx.setStorageSync('token',res.data.data.token)
-            // console.log(res,"我是封装zzhi'hohihou的登录");
-            wx.request({
-              url: 'https://eiom.totwoo.com/api/member/userinfo',
-              method:"post",
-              data:that.data.userInfo,
-              header:{
-                //   wx.getStorageSync('token') 从缓存中取出token值
-                "authorization": wx.getStorageSync('token')
-              },
-              success:(e)=>{
+            }).then(res=>{
+              console.log(res,"登陆返回的数据");
 
-              },
-        })
-            
+              wx.setStorageSync('token',res.token)
+            },
+            (err)=>{
+              console.log("失败",res);
+            })
+
+            userinfo({ data:that.data.userInfo,}).then(res=>{
+              console.log("userinfo","#####");
+            },
+            (err)=>{
+              console.log("失败",res);
+            })
+
           }
         })
 
