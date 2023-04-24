@@ -1,2 +1,2 @@
 <!--pages/articleList/articleList.wxml-->
-<text>pages/articleList/articleList.wxml</text>
+<van-empty description="暂无数据" />

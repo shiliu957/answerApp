@@ -1,3 +1,4 @@
+const {topic} = require("../../api/login")
 // pages/judge/judge.js
 Page({
 
@@ -93,11 +94,20 @@ Page({
     })
     console.log('current', this.data.current);
   },
+  //获取练习数据
+  // gettopicinfo(){
+  //   let uid = wx.getStorageSync('uid')
+  //   topic({
+  //     uid
+  //   })
+  // }
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-		this.startTimer();
+    this.startTimer();
+    
   },
 
   /**

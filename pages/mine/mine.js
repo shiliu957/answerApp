@@ -56,7 +56,6 @@ Page({
     wx.getUserProfile({
       desc: '用于完善信息',
     success(res){
-      console.log(res.userInfo,"wwwwwwww");
       var user = res.userInfo
       that.setData({
         userInfo:user
@@ -65,24 +64,23 @@ Page({
           success: res => {
             // 发送 res.code 到后台换取 openId, sessionKey, unionId
             let code = res.code
-            console.log(code,"这是舍呢");
             login({
               js_code: code,
             }).then(res=>{
-              console.log(res,"登陆返回的数据");
-
               wx.setStorageSync('token',res.token)
+              wx.setStorageSync('uid',res.uid)
+              userinfo({ data:that.data.userInfo,}).then(res=>{
+                console.log(res,"fanhuide");
+              },
+              (err)=>{
+                console.log("失败",res);
+              })
             },
             (err)=>{
               console.log("失败",res);
             })
 
-            userinfo({ data:that.data.userInfo,}).then(res=>{
-              console.log("userinfo","#####");
-            },
-            (err)=>{
-              console.log("失败",res);
-            })
+
 
           }
         })

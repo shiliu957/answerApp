@@ -1,6 +1,5 @@
 <!--pages/exam2/exam2.wxml-->
-
-	<view class="">
+	<view class="examBox">
 		<view class="">
 			<text>1.【判断题】 雨篷板是受弯构件。</text>
 			</view>
@@ -17,16 +16,16 @@
         </label>
       </radio-group>
 			</view>
-		<view class="" style="margin-top: 20rpx; text-align: center;display: flex;">
-			<button type="primary" style="width: 40%;background: #409eff;">上一题</button>
-			<button type="primary" style="width: 40%;background: #409eff;">下一题</button>
+		<view class="">
+      <van-button loading="{{Loading}}" type="info" loading-text="加载中...">上一题</van-button>
+      <van-button loading="{{Loading}}" type="info" loading-text="加载中...">下一题</van-button>
 		</view>
 
     <van-tabbar v-model="active">
   <van-tabbar-item icon="setting-o">设置</van-tabbar-item>
   <van-tabbar-item icon="star-o">收藏</van-tabbar-item>
   <!-- <van-count-down millisecond :time="time" format="mm:ss:SS" /> -->
-  <button style="background-color: #409eff; width: 260rpx; height: 90rpx; font-size: 32rpx; color: white; " >提交试卷</button>
+  <van-button loading="{{Loading}}" type="info" loading-text="加载中...">提交试卷</van-button>
 </van-tabbar>
 
 

@@ -6,8 +6,8 @@ Page({
    */
   data: {
     active: 0,
-    time: 20 * 20 * 1000
-
+    time: 20 * 20 * 1000,
+    Loading : false
   },
 
   /**

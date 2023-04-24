@@ -1,21 +1,21 @@
 <view class="wrap">
   <view class="title" bindtap="getUserProfile" >
-    <image src="{{userInfo.avatarUrl}}"></image>
+    <image class="image" src="{{userInfo.avatarUrl}}"></image>
     <view class="name" >{{!!userInfo ? userInfo.nickName : "登录"}}</view>
   </view>
 
   <view class="box">
   <view style="height: 120rpx;" bindtap="AnswerRecord">
-    <p>答题记录</p> <span ><van-icon name="arrow" /></span>
+    <p class="text">答题记录</p> <span class="span"><van-icon name="arrow" /></span>
   </view>
   <view style="height: 120rpx;" bindtap="TestScore">
-    <p>考试成绩</p> <span><van-icon name="arrow" /></span>
+    <p class="text">考试成绩</p> <span class="span"><van-icon name="arrow" /></span>
   </view>
   <view style="height: 120rpx;" bindtap="MyVideos">
-    <p>我的视频</p> <span><van-icon name="arrow" /></span>
+    <p class="text">我的视频</p> <span class="span"><van-icon name="arrow" /></span>
   </view>
   <view style="height: 120rpx;" bindtap="MyArticles">
-    <p>我的文章</p> <span><van-icon name="arrow" /></span>
+    <p class="text">我的文章</p> <span class="span"><van-icon name="arrow" /></span>
   </view>
     <!-- <van-collapse value="{{activeName}}" accordion bind:change="change">
       <van-collapse-item title="答题记录" name="1">

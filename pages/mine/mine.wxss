@@ -12,7 +12,7 @@
   display: flex;
 }
 
-.title image {
+.image {
   width: 120rpx;
   height: 120rpx;
   border-radius: 50%;
@@ -20,7 +20,7 @@
   margin-top: -40rpx;
 }
 
-.title .name {
+.name {
   font-size: 40rpx;
   /* margin-top: 30rpx; */
   margin-top: -5rpx;
@@ -39,10 +39,10 @@
   border-radius: 40rpx 40rpx 0 0;
    padding-top: 100rpx;
 }
-.box p{
+.text{
   margin-left: 50rpx;
 }
-.box span{
+.span{
   float: right;
   margin-right: 50rpx;
   color: #ccc;

@@ -7,13 +7,6 @@ Page({
   data: {
 
   },
-
-    practiceClick() {
-      // alert(111);
-      wx.navigateTo({
-        url: '/pages/practice/practice'
-      })
-    },
     examClick(){
       wx.navigateTo({
         url: '/pages/exam/exam',
@@ -22,7 +15,7 @@ Page({
     practiceClick() {
       // alert(111);
       wx.navigateTo({
-        url: '/pages/practice/practice'
+        url: '/pages/examBegin/examBegin'
       })
     },
 

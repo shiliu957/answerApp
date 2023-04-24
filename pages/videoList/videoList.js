@@ -1,3 +1,4 @@
+const {video} = require("../../api/login")
 // pages/videoList/videoList.js
 Page({
 
@@ -5,19 +6,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    page:1,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    this.getVideoList()
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
+
   onReady() {
 
   },
@@ -62,5 +64,11 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  getVideoList(){
+    let page = this.data.page
+    video({page}).then(res=>{
+      console.log(res,"视频列表返回的数据");
+    })
   }
 })
