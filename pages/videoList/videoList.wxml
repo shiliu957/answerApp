@@ -1,0 +1,9 @@
+<!--pages/videoList/videoList.wxml-->
+<!-- <text>pages/videoList/videoList.wxml</text> -->
+<view>
+  <view class="videoItem" wx:for="item in 5" wx:key="item" >
+    <view class="videoBox" >
+      111
+    </view>
+  </view>
+</view>

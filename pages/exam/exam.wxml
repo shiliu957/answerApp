@@ -9,6 +9,6 @@
 		<text style="font-size:26rpx">统计测试卷中的错题,可再练</text>
 	</view>
 
-  <text class="btn" type="primary" bindtap="exam1">开始考试</text>
+  <text class="btn" type="primary" bindtap="examBeginBtn">开始考试</text>
 </view>
 

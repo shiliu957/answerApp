@@ -19,6 +19,24 @@ Page({
         url: '/pages/exam/exam',
       })
     },
+    practiceClick() {
+      // alert(111);
+      wx.navigateTo({
+        url: '/pages/practice/practice'
+      })
+    },
+
+    videoList(){
+      wx.navigateTo({
+        url: '/pages/videoList/videoList'
+      })
+    },
+
+    articleList(){
+      wx.navigateTo({
+        url: '/pages/articleList/articleList'
+      })
+    },
 
   /**
    * 生命周期函数--监听页面加载

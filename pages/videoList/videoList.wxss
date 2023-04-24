@@ -1,0 +1,17 @@
+/* pages/videoList/videoList.wxss */
+.videoItem{
+  width: 90%;
+  height: 200rpx;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 15rpx;
+  margin-top: 20rpx;
+  box-shadow: 0 0 15rpx #ccc;
+}
+.videoBox{
+  width: 200rpx;
+  height: 150rpx;
+  vertical-align:middle;
+  margin-left: 20rpx;
+  background-color: aqua;
+}

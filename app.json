@@ -5,11 +5,15 @@
     "pages/mine/mine",
     "pages/practice/practice",
     "pages/exam/exam",
+    "pages/examBeginBtn/examBeginBtn",
+    "pages/examBegin/examBegin",
     "pages/judge/judge",
     "pages/AnswerRecord/AnswerRecord",
     "pages/TestScore/TestScore",
     "pages/MyVideos/MyVideos",
     "pages/MyArticles/MyArticles",
+    "pages/articleList/articleList",
+    "pages/videoList/videoList",
     "pages/authorize/authorize"
   ],
   "window": {
@@ -28,20 +32,20 @@
       {
         "pagePath": "pages/home/home",
         "text": "主页",
-        "iconPath": "/static/images/tabBar/主页2.png",
-        "selectedIconPath": "/static/images/tabBar/主页1.png"
+        "iconPath": "/static/images/tabBar/home1.png",
+        "selectedIconPath": "/static/images/tabBar/home.png"
       },
       {
         "pagePath": "pages/category/category",
         "text": "分类",
         "iconPath": "/static/images/tabBar/category1.png",
-        "selectedIconPath": "/static/images/tabBar/分类.png"
+        "selectedIconPath": "/static/images/tabBar/category.png"
       },
       {
         "pagePath": "pages/mine/mine",
         "text": "我的",
         "iconPath": "/static/images/tabBar/mine1.png",
-        "selectedIconPath": "/static/images/tabBar/我的.png"
+        "selectedIconPath": "/static/images/tabBar/mine.png"
       }
     ]
   }

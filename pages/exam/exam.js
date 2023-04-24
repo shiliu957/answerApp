@@ -7,9 +7,9 @@ Page({
   data: {
 
   },
-  exam1(){
+  examBeginBtn(){
     wx.navigateTo({
-      url: '/pages/exam1/exam1',
+      url: '/pages/examBeginBtn/examBeginBtn',
     })
   },
 
