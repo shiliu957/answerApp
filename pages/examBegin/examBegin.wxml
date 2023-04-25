@@ -1,36 +1,56 @@
 <!--pages/exam2/exam2.wxml-->
-	<view class="examBox">
-		<view class="">
-			<text>1.【判断题】 雨篷板是受弯构件。</text>
-			</view>
-			
-			<view class="" style="margin-top: 20rpx;">
-        <radio-group class="radio-group" style="display: flex;flex-direction: column;">
-        <label class="radio" >
-          <radio />
-          A、正确
-        </label>
-        <label class="radio" >
-          <radio style="margin-top: 10rpx;" />
-          B、错误
-        </label>
-      </radio-group>
-			</view>
-		<view class="">
-      <van-button loading="{{Loading}}" type="info" loading-text="加载中...">上一题</van-button>
-      <van-button loading="{{Loading}}" type="info" loading-text="加载中...">下一题</van-button>
-		</view>
-
-    <van-tabbar v-model="active">
-  <van-tabbar-item icon="setting-o">设置</van-tabbar-item>
-  <van-tabbar-item icon="star-o">收藏</van-tabbar-item>
-  <!-- <van-count-down millisecond :time="time" format="mm:ss:SS" /> -->
-  <van-button loading="{{Loading}}" type="info" loading-text="加载中...">提交试卷</van-button>
-</van-tabbar>
-
-
-	</view>
+<view class="examBox">
+  <view class="examBoxBorder">
+    <span>单选题</span> 
+      <!-- 答题进度条 -->
+  <view>
+    <span style="color: rgba(255, 255, 255, 0);">25%</span>
+    <van-progress percentage="10"></van-progress>
+    <span style="color: rgba(255, 255, 255, 0);">25%</span>
+  </view>
+  </view>
 
 
 
+  <view class="choiceTitle Position">
+    <text>【1】 下面哪位历史人物与秦朝无关</text>
+  </view>
 
+<!-- 单选题 -->
+  <view class="MultipleChoice Position">
+    <radio-group class="radio-group">
+      <label class="radio">
+        <radio />
+        A、赵高
+      </label>
+      <label class="radio">
+        <radio />
+        B、李斯
+      </label>
+      <label class="radio">
+        <radio />
+        C、张仪
+      </label>
+      <label class="radio">
+        <radio/>
+        D、王莽
+      </label>
+    </radio-group>
+  </view>
+
+
+  <view class="BottomBox">
+    <view  class="bottomLift">
+    <van-icon custom-style="margin: 24rpx 12rpx 0 12rpx;" name="todo-list-o" />
+    <van-count-down class="timeCount" time="{{ time }}" format="HH:mm:ss" />
+    <view class="bottomBtn">
+    <van-button custom-style="margin-right: 10rpx;" type="info" >上一题</van-button>
+    <van-button type="info" >下一题</van-button>
+    </view>
+  </view>
+
+  </view>
+
+
+
+</view>

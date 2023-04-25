@@ -1,6 +1,6 @@
 <view class="container">
   <view class="titleWarp">
-    <view wx:for="{{label}}" class="title_content">
+    <view wx:for="{{label}}" wx:key="index" class="title_content">
       <text class="tit_left">{{item.title}}</text>
       <text class="tit_right">{{item.content}}</text>
     </view>

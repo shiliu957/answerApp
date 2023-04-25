@@ -5,9 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    active: 0,
-    time: 20 * 20 * 1000,
-    Loading : false
+    Loading : false,
+    time: 60 * 60 * 60 * 1000
   },
 
   /**

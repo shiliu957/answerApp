@@ -11,12 +11,12 @@
   <view style="height: 120rpx;" bindtap="TestScore">
     <p class="text">考试成绩</p> <span class="span"><van-icon name="arrow" /></span>
   </view>
-  <view style="height: 120rpx;" bindtap="MyVideos">
+  <!-- <view style="height: 120rpx;" bindtap="MyVideos">
     <p class="text">我的视频</p> <span class="span"><van-icon name="arrow" /></span>
   </view>
   <view style="height: 120rpx;" bindtap="MyArticles">
     <p class="text">我的文章</p> <span class="span"><van-icon name="arrow" /></span>
-  </view>
+  </view> -->
     <!-- <van-collapse value="{{activeName}}" accordion bind:change="change">
       <van-collapse-item title="答题记录" name="1">
         代码是写出来给人看的，附带能在机器上运行。

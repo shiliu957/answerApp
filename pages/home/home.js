@@ -9,13 +9,13 @@ Page({
   },
     examClick(){
       wx.navigateTo({
-        url: '/pages/exam/exam',
+        url: '/pages/examBeginBtn/examBeginBtn',
       })
     },
     practiceClick() {
       // alert(111);
       wx.navigateTo({
-        url: '/pages/examBegin/examBegin'
+        url: '/pages/judge/judge'
       })
     },
 

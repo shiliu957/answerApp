@@ -1,73 +1,54 @@
-/* pages/judge/judge.wxss */
-.containerIndex{
-	width: 100%;
-	height: 100%;
+/* pages/exam2/exam2.wxss */
+.examBox{
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
 }
-.header {
-	height: 70rpx;
-	border-top: 2rpx solid #ccc;
-	border-bottom: 2rpx solid #ccc;
-	padding: 10rpx;
-	/* line-height: 70rpx; */
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+.MultipleChoice{
+  margin-top: 20rpx;
 }
-.header-right {
-	display: flex;
-	align-items: center;
+.MultipleChoice .radio-group{
+  padding-left: 30rpx;
+  display: flex;
+  flex-direction: column;
 }
-.header-right .timer {
-	text-align: center;
-	line-height: 10rpx;
-	margin-bottom: 30rpx;
+.MultipleChoice .radio-group{
+  margin-top: 10rpx;
 }
-.timer view {
-	font-size: 25rpx;
+.radio{
+  margin-top: 20rpx;
 }
-.collect {
-	margin: 0 20rpx;
+.BottomBox{
+  height: 104rpx;
+  width: 100%;
+  /* border:  2rpx solid black; */
+  box-shadow: 0rpx -10rpx 10rpx rgb(110, 110, 110);
+  position: absolute;
+  bottom: 46rpx;
 }
-.header-right image {
-	width: 45rpx;
-	height: 45rpx;
+.Bottombox{
+  display: flex;
+  position: relative;
 }
-
-.main {
-	box-sizing: border-box;
-	height: 1000rpx;
-	width: 100%;
-	padding: 10rpx 0 0 10rpx;
-	display: flex;
+.timeCount{
+  margin-top:30rpx ;
 }
-.mainItem {
-	height: 1000rpx;
-	margin-right: 10rpx;
+.bottomBtn{
+  margin-top: 5rpx;
+  position: absolute;
+  right: 6rpx;
+  top: 6rpx;
 }
-.title {
-	margin-top: 20rpx;
-	font-weight: 700;
+.bottomLift{
+  display: flex;
 }
-.topic {
-	margin: 30rpx 0;
+.examBoxBorder{
+  margin-top: 20rpx;
+  margin-bottom: 25rpx;
+  padding-left: 20rpx;
+  box-shadow: 0rpx 10rpx 10rpx rgb(110, 110, 110);
 }
-
-.tabItem {
-	height: 70rpx;
-	background: #f0f0f0;
-	margin-bottom: 20rpx;
-	border-radius: 10rpx;
-	line-height: 70rpx;
-}
-.tabItem .A {
-	margin: 0 20rpx;
-}
-.error {
-	background-color: red;
-	color: #fff;
-}
-
-.right {
-	background-color: #31c27c;
-	color: #fff;
+.Position{
+  margin-left: 15rpx;
 }

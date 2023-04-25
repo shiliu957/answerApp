@@ -4,7 +4,6 @@
     "pages/category/category",
     "pages/mine/mine",
     "pages/practice/practice",
-    "pages/exam/exam",
     "pages/examBeginBtn/examBeginBtn",
     "pages/examBegin/examBegin",
     "pages/judge/judge",
@@ -13,8 +12,7 @@
     "pages/MyVideos/MyVideos",
     "pages/MyArticles/MyArticles",
     "pages/articleList/articleList",
-    "pages/videoList/videoList",
-    "pages/authorize/authorize"
+    "pages/videoList/videoList"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -33,12 +31,6 @@
         "text": "主页",
         "iconPath": "/static/images/tabBar/home1.png",
         "selectedIconPath": "/static/images/tabBar/home.png"
-      },
-      {
-        "pagePath": "pages/category/category",
-        "text": "分类",
-        "iconPath": "/static/images/tabBar/category1.png",
-        "selectedIconPath": "/static/images/tabBar/category.png"
       },
       {
         "pagePath": "pages/mine/mine",

@@ -1,6 +1,54 @@
 /* pages/exam2/exam2.wxss */
 .examBox{
   width: 100%;
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
+  position: relative;
+}
+.MultipleChoice{
+  margin-top: 20rpx;
+}
+.MultipleChoice .radio-group{
+  padding-left: 30rpx;
+  display: flex;
+  flex-direction: column;
+}
+.MultipleChoice .radio-group{
+  margin-top: 10rpx;
+}
+.radio{
+  margin-top: 20rpx;
+}
+.BottomBox{
+  height: 104rpx;
+  width: 100%;
+  /* border:  2rpx solid black; */
+  box-shadow: 0rpx -10rpx 10rpx rgb(110, 110, 110);
+  position: absolute;
+  bottom: 46rpx;
+}
+.Bottombox{
+  display: flex;
+  position: relative;
+}
+.timeCount{
+  margin-top:30rpx ;
+}
+.bottomBtn{
+  margin-top: 5rpx;
+  position: absolute;
+  right: 6rpx;
+  top: 6rpx;
+}
+.bottomLift{
+  display: flex;
+}
+.examBoxBorder{
+  margin-top: 20rpx;
+  margin-bottom: 25rpx;
+  padding-left: 20rpx;
+  box-shadow: 0rpx 10rpx 10rpx rgb(110, 110, 110);
+}
+.Position{
+  margin-left: 15rpx;
 }

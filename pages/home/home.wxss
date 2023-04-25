@@ -90,6 +90,8 @@
   margin-left: 20rpx;
 }
 .color{
-  background-color: #e0dada;
-  box-shadow:rgb(110, 110, 110) 0px 0px 10px
+  /* height: 24vh; */
+  background-color: #ffffff;
+  box-shadow:rgb(110, 110, 110) 0px 0px 10px; 
+  
 }
