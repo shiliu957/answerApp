@@ -3,18 +3,28 @@ page{
   background-color: rgb(242, 242, 242);
 }
 .video{
-  margin: 10rpx auto;
-  width: 90%;
-  height: 150rpx;
+  /* margin: 10rpx auto; */
+  width: 46%;
+  height: 400rpx;
+  float: left;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+  background-color: white;
+  border-radius: 10rpx;
+}
+.video2{
+  float: right;
+  width: 46%;
+  height: 400rpx;
+  margin-right: 20rpx;
+  margin-top: 20rpx;
   background-color: white;
   border-radius: 10rpx;
 }
 .covervideo{
-  width: 160rpx;
-  height: 120rpx;
+  width: 100%;
+  height: 260rpx;
   background-color: greenyellow;
-  margin-top: 2%;
-  margin-left: 20rpx;
   border-radius: 10rpx;
   float: left;
 }
@@ -24,14 +34,17 @@ page{
 .videoTitle{
   font-size: 28rpx;
   margin-left: 20rpx;
+  line-height: 70rpx;
 }
-.videoDate{
+.videoType{
   color: darkgray;
   font-size: 26rpx;
   margin-left: 20rpx;
+  line-height: 60rpx;
 }
-.taskName{
-  color: darkgray;
-  font-size: 26rpx;
-  margin-left: 20rpx;
+.videoType span{
+  border: 1px solid pink;
+  border-radius: 10rpx;
+  color: pink;
+  font-size: 24rpx;
 }

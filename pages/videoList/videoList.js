@@ -7,8 +7,17 @@ Page({
    */
   data: {
     page:1,
+    total:null,
+    list:[],
   },
-
+  MyVideo(e){
+    wx.navigateTo({
+      url: '/pages/MyVideos/MyVideos',
+      success:(res)=>{
+        res.eventChannel.emit("getItem",e.target.dataset.item)
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -69,6 +78,11 @@ Page({
     let page = this.data.page
     video({page}).then(res=>{
       console.log(res,"视频列表返回的数据");
+      const {list,total} = res
+      this.setData({
+        list,
+        total
+      })
     })
   }
 })

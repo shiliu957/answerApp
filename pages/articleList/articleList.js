@@ -12,8 +12,12 @@ Page({
   },
   // <rich-text nodes="{{a}}"/>
   ClickItem(e) {
-    console.log(e.target.dataset.item,"我开始点击了");
-    console.log(this,"我开始点击了");
+    wx.navigateTo({
+      url: '/pages/articleItem/articleItem',
+      success:(res)=>{
+        res.eventChannel.emit("getItem",e.target.dataset.item.content)
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面加载

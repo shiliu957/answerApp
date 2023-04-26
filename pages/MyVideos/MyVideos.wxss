@@ -1,1 +1,4 @@
 /* pages/MyVideos/MyVideos.wxss */
+.video{
+  width: 100%;
+}
