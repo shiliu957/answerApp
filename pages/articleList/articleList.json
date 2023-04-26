@@ -1,5 +1,7 @@
 {
+  "navigationBarTitleText": "金博纳电力题库",
   "usingComponents": {
-    "van-empty": "@vant/weapp/empty/index"
+    "van-empty": "@vant/weapp/empty/index",
+    "van-icon": "@vant/weapp/icon/index"
   }
 }

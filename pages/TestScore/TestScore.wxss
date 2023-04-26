@@ -1,1 +1,30 @@
 /* pages/TestScore/TestScore.wxss */
+page {
+  background-color: rgb(242, 242, 242);
+}
+.score{
+  margin: 10rpx auto;
+  width: 90%;
+  height: 150rpx;
+  background-color: white;
+  border-radius: 10rpx;
+}
+.box{
+  padding-top: 30rpx;
+}
+.scoreTitle{
+  font-size: 28rpx;
+  margin-left: 20rpx;
+}
+.scoreDate{
+  color: darkgray;
+  font-size: 26rpx;
+  margin-left: 20rpx;
+}
+.scoreNumber{
+  float: right;
+  color: red;
+  margin-right: 30rpx;
+  margin-top: -11%;
+  font-size: 36rpx;
+}

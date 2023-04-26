@@ -1,1 +1,32 @@
 /* pages/AnswerRecord/AnswerRecord.wxss */
+page{
+  background-color: rgb(242, 242, 242);
+}
+.answer{
+  margin: 10rpx auto;
+  width: 90%;
+  height: 150rpx;
+  background-color: white;
+  border-radius: 10rpx;
+}
+.coverPicture{
+  width: 160rpx;
+  height: 120rpx;
+  background-color: greenyellow;
+  margin-top: 2%;
+  margin-left: 20rpx;
+  border-radius: 10rpx;
+  float: left;
+}
+.box{
+  padding-top: 30rpx;
+}
+.answerTitle{
+  font-size: 28rpx;
+  margin-left: 20rpx;
+}
+.answerDate{
+  color: darkgray;
+  font-size: 26rpx;
+  margin-left: 20rpx;
+}

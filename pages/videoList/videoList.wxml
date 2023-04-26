@@ -1,9 +1,21 @@
 <!--pages/videoList/videoList.wxml-->
 <!-- <text>pages/videoList/videoList.wxml</text> -->
-<view>
-  <view class="videoItem" wx:for="item in 5" wx:key="item" >
-    <view class="videoBox" >
-      111
-    </view>
+<view class="videoList" >
+  <view class="video">
+
+    <!-- 视频的封面图 -->
+    <view class="covervideo" >
+      <image></image>
+  </view>
+
+  <view class="box" >
+    <text class="videoTitle" >观看的视频的名字
+    </text>
+    <text class="taskName">观看的视频里章节的名字
+    </text>
+    <text class="videoDate">2023-04-25
+    </text>
+
+  </view>
   </view>
 </view>

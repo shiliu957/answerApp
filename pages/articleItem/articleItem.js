@@ -1,32 +1,18 @@
-// pages/articleList/articleList.js
-const {handout} = require("../../api/login")
+// pages/articleItem/articleItem.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    total:null,
-    list:[],
-    a:null
+    node:null
   },
-  // <rich-text nodes="{{a}}"/>
-  ClickItem(e) {
-    console.log(e.target.dataset.item,"我开始点击了");
-    console.log(this,"我开始点击了");
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    handout({page:1}).then(res=>{
-      console.log(res,"后端返回的列表数据");
-      let {list,total} = res
-      this.setData({
-        list,
-        total
-      })
-    })
+
   },
 
   /**

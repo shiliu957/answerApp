@@ -1,34 +1,52 @@
-<view class="container">
-  <view class="titleWarp">
-    <view wx:for="{{label}}" wx:key="index" class="title_content">
-      <text class="tit_left">{{item.title}}</text>
-      <text class="tit_right">{{item.content}}</text>
-    </view>
-    <view class="radio_warp">
-      <text style="color: rgb(155, 152, 152);display:flex; align-items: center;">答案提示</text>
-      <radio-group bindchange="" class="radio_my">
-        <label class="radio">
-          <radio value="r1" checked="true" />选中
-        </label>
-        <label class="radio">
-          <radio value="r2" />未选中
-        </label>
-      </radio-group>
-    </view>
-    <view class="radio_warp">
-      <text style="color: rgb(155, 152, 152);  display:flex; align-items: center;">出题方式</text>
-      <radio-group bindchange="" class="radio_my">
-        <label class="radio">
-      <radio value="r1" checked="true"/>随机出题
-    </label>
-    <label class="radio">
-      <radio value="r2" />错题优先(VIP)
-    </label>
-    <label class="radio">
-      <radio value="r2" />未答题优先(VIP)
-    </label>
-      </radio-group>
-    </view>
+<view>
+  <view class="examTitle" >
+    <text class="text" >电力考试</text>
   </view>
-  <view class="btn" bindtap="examBegin">开始考试</view>
+
+  <view class="examContent" >
+  <view class="contentText">
+    <text class="leftText" >考试时间： 
+    <text class="rightText" >60分钟
+    </text>
+    </text>
+    <text class="leftText" >总题数： 
+      <text class="rightText" >100个
+      </text>
+    </text>
+    <text class="leftText" >试卷满分： 
+      <text class="rightText" >100分
+      </text>
+    </text>
+    <text class="leftText" >及格分：
+      <text class="rightText" >60分
+      </text>
+    </text>
+    <text class="leftText" >开考时间:
+      <text class="rightText" >16:20
+      </text>
+    </text>
+    <text class="leftText" >结束时间：
+      <text class="rightText" >17:20
+      </text>
+    </text>
+  </view>
+  </view>
+
+  <view class="start" >
+  <van-button type="info" size="large" bindtap="examBegin">开始考试</van-button>
+  </view>
+
+  <view class="explain" >
+   
+    <text class="explainText" >考试说明：
+    </text>
+  </view>
+
+  <view class="explainContent">
+    <text class="ContentText">请考生自觉遵守答题纪律，客观公正的参与答题，期待您的超长发挥！
+    </text>
+  </view>
+
+
+
 </view>

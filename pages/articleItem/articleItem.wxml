@@ -1,0 +1,2 @@
+<!--pages/articleItem/articleItem.wxml-->
+<rich-text nodes="{{node}}"/>

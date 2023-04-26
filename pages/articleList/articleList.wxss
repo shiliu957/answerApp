@@ -1,1 +1,25 @@
 /* pages/articleList/articleList.wxss */
+.testBox{             /*  每一个的盒子  */ 
+  margin: 30rpx 20rpx;
+  border-bottom: 1rpx solid #cfcfcf;
+}
+.middleBox{
+  margin: 15rpx 0;
+  height: 100rpx;
+  position: relative;
+}
+.color {
+  display: block;
+  color: #6a6a6a;
+  margin-left: 10rpx;
+  margin-right: 20rpx;
+  overflow: hidden;   
+	text-overflow: ellipsis;   
+	white-space: nowrap;   
+}
+.time{
+  color: #a39f9f;
+  position: absolute;
+  right: 20rpx;
+  top: 60rpx;
+}

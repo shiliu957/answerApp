@@ -12,6 +12,7 @@
     "pages/MyVideos/MyVideos",
     "pages/MyArticles/MyArticles",
     "pages/articleList/articleList",
+    "pages/articleItem/articleItem",
     "pages/videoList/videoList"
   ],
   "window": {

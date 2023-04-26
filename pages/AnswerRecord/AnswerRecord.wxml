@@ -1,2 +1,28 @@
 <!--pages/AnswerRecord/AnswerRecord.wxml-->
-<text>pages/AnswerRecord/AnswerRecord.wxml</text>
+<!-- <text>pages/AnswerRecord/AnswerRecord.wxml</text> -->
+<view class="answerBox" >
+  <view class="answer">
+
+    <!-- 封面 -->
+    <view class="coverPicture" >
+      <image></image>
+  </view>
+
+  <view class="box" >
+    <text class="answerTitle" >电力知识题组一
+    </text>
+    <text class="answerDate">2023年04月25日 完成答题 | 90分
+    </text>
+  </view>
+
+
+  </view>
+</view>
+
+<!-- <view class="answerBox">
+  <view class="answer">
+    <image class="VideoCover" ></image>
+    <span><p>电力知识题组一</p></span>
+    <span>2023年04月25日 完成答题 | 90分</span>
+  </view>
+</view> -->

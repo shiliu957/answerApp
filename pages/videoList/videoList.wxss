@@ -1,17 +1,37 @@
-/* pages/videoList/videoList.wxss */
-.videoItem{
-  width: 90%;
-  height: 200rpx;
-  margin: 0 auto;
-  background-color: white;
-  border-radius: 15rpx;
-  margin-top: 20rpx;
-  box-shadow: 0 0 15rpx #ccc;
+/* pages/AnswerRecord/AnswerRecord.wxss */
+page{
+  background-color: rgb(242, 242, 242);
 }
-.videoBox{
-  width: 200rpx;
+.video{
+  margin: 10rpx auto;
+  width: 90%;
   height: 150rpx;
-  vertical-align:middle;
+  background-color: white;
+  border-radius: 10rpx;
+}
+.covervideo{
+  width: 160rpx;
+  height: 120rpx;
+  background-color: greenyellow;
+  margin-top: 2%;
   margin-left: 20rpx;
-  background-color: aqua;
+  border-radius: 10rpx;
+  float: left;
+}
+.box{
+  padding-top: 16rpx;
+}
+.videoTitle{
+  font-size: 28rpx;
+  margin-left: 20rpx;
+}
+.videoDate{
+  color: darkgray;
+  font-size: 26rpx;
+  margin-left: 20rpx;
+}
+.taskName{
+  color: darkgray;
+  font-size: 26rpx;
+  margin-left: 20rpx;
 }
