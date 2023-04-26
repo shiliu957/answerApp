@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "金博纳电力题库",
   "usingComponents": {
       "van-button": "@vant/weapp/button/index"
   }
