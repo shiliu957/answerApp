@@ -7,6 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    uid:null,
+    token:null,
     userInfo:null,
     activeName: 0,
     islogin:false,
@@ -69,6 +71,10 @@ Page({
             }).then(res=>{
               wx.setStorageSync('token',res.token)
               wx.setStorageSync('uid',res.uid)
+              that.setData({
+                token:res.token,
+                uid:res.uid
+              })
               userinfo({ data:that.data.userInfo,}).then(res=>{
                 console.log(res,"fanhuide");
               },

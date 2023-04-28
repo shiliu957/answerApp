@@ -1,1 +1,16 @@
 /* pages/articleItem/articleItem.wxss */
+.richText{
+  /* margin-top: 60rpx; */
+  padding: 30rpx;
+}
+.title{
+  text-align:center;
+  color: #121212;
+  font-size: 50rpx;
+  font-weight:600;
+}
+.time{
+  margin-top: 20rpx;
+  text-align:center;
+  color: #7e7e7e;
+}

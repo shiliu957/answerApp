@@ -1,3 +1,4 @@
+<!-- <van-empty description="暂无数据" wx:if="{{list.length === 0}}" /> -->
 <view>
   <view class="video" wx:for="{{list}}" catchtap="MyVideo" data-item="{{item.video_url}}" wx:key="index">
     <image data-item="{{item.video_url}}" class="covervideo" src="{{item.cover_url}}"></image>
@@ -5,45 +6,10 @@
     <view class="videoTitle" data-item="{{item.video_url}}">
       {{item.title}}
     </view>
-    <view class="videoType" data-item="{{item.video_url}}">
+    <!-- <view class="videoType" data-item="{{item.video_url}}">
       <span data-item="{{item.video_url}}">{{item.updated_at}}</span>
-    </view>
-    </view>
-  </view>
-
-  <!-- <view class="video2" >
-    <image class="covervideo"></image>
-    <view class="box" >
-    <view class="videoTitle">
-      中国通史：第1集
-    </view>
-    <view class="videoType">
-      <span>纪录片</span> 已完结，全100集
-    </view>
+    </view> -->
     </view>
   </view>
 
-  <view class="video" >
-    <image class="covervideo"></image>
-    <view class="box" >
-    <view class="videoTitle">
-      中国通史：第1集
-    </view>
-    <view class="videoType">
-      <span>纪录片</span> 已完结，全100集
-    </view>
-    </view>
-  </view>
-
-  <view class="video2" >
-    <image class="covervideo"></image>
-    <view class="box" >
-    <view class="videoTitle">
-      中国通史：第1集
-    </view>
-    <view class="videoType">
-      <span>纪录片</span> 已完结，全100集
-    </view>
-    </view>
-  </view> -->
 </view>

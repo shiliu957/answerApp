@@ -1,2 +1,2 @@
 <!--pages/MyVideos/MyVideos.wxml-->
-<video class="video" src="{{url}}"/>
+<video autoplay show-fullscreen-btn="{{true}}" show-center-play-btn="{{false}}"  show-play-btn="{{true}}"  show-progress="{{false}}"  enable-progress-gesture="{{ false }}" class="video" src="{{url}}"/>

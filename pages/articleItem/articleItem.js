@@ -5,7 +5,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    node:null
+    node:null,
+    name:null,
+    time:null,
   },
 
   /**
@@ -14,8 +16,11 @@ Page({
   onLoad(options) {
     const eventChannel = this.getOpenerEventChannel()
     eventChannel.on("getItem", data=>{
+      console.log(data);
       this.setData({
-        node:data
+        node:data.content,
+        name:data.title,
+        time:data.updated_at,
       })
     })
   },
@@ -38,14 +43,22 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide() {
-
+    this.setData({
+      node:null,
+      name:null,
+      time:null,
+    })
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload() {
-
+    this.setData({
+      node:null,
+      name:null,
+      time:null,
+    })
   },
 
   /**

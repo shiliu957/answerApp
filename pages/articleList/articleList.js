@@ -8,6 +8,7 @@ Page({
   data: {
     total:null,
     list:[],
+    list1:[],
     a:null
   },
   // <rich-text nodes="{{a}}"/>
@@ -15,7 +16,7 @@ Page({
     wx.navigateTo({
       url: '/pages/articleItem/articleItem',
       success:(res)=>{
-        res.eventChannel.emit("getItem",e.target.dataset.item.content)
+        res.eventChannel.emit("getItem",e.target.dataset.item)
       }
     })
   },

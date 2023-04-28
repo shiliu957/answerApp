@@ -4,8 +4,9 @@
   border-bottom: 1rpx solid #cfcfcf;
 }
 .middleBox{
-  margin: 15rpx 0;
-  height: 100rpx;
+  padding-bottom: 30rpx;
+  /* margin: 15rpx 0; */
+  /* height: 80rpx; */
   position: relative;
 }
 .color {

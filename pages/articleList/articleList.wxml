@@ -1,9 +1,8 @@
 <!--pages/articleList/articleList.wxml-->
-<van-empty description="暂无数据" wx:if="{{false}}" />
+<van-empty description="暂无数据" wx:if="{{list.length === 0}}" />
 <view class="testBox" wx:for="{{list}}" wx:key="index">
   <view class="middleBox"  catchtap="ClickItem" data-item="{{item}}">
     <span class="color" data-item="{{item}}">{{item.title}}</span>
-    <br/>
-    <span class="time" data-item="{{item}}">{{item.updated_at}}</span>
+    <!-- <span class="time" data-item="{{item}}">{{item.updated_at}}</span> -->
   </view>
 </view>

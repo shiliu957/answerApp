@@ -1,2 +1,11 @@
 <!--pages/articleItem/articleItem.wxml-->
-<rich-text nodes="{{node}}"/>
+<view class="richText">
+  <view class="title">
+    {{name}}
+  </view>
+  <view class="time">
+    {{time}}
+  </view>
+  <rich-text nodes="{{node}}"/>
+</view>
+
