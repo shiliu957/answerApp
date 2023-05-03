@@ -3,37 +3,37 @@
   <view class="examBoxBorder">
     <span>单选题</span> 
       <!-- 答题进度条 -->
-  <view>
+  <!-- <view>
     <span style="color: rgba(255, 255, 255, 0);">25%</span>
     <van-progress percentage="10"></van-progress>
     <span style="color: rgba(255, 255, 255, 0);">25%</span>
-  </view>
+  </view> -->
   </view>
 
 
 
   <view class="choiceTitle Position">
-    <text>【1】 下面哪位历史人物与秦朝无关</text>
+    <text>【{{info.id}}】 {{info.title}}</text>
   </view>
 
 <!-- 单选题 -->
   <view class="MultipleChoice Position">
-    <radio-group class="radio-group">
+    <radio-group class="radio-group" bindchange="radioChange">
       <label class="radio">
-        <radio />
-        A、赵高
+        <radio value="{{info.topic_a}}"/>
+        A、{{info.topic_a}}
       </label>
       <label class="radio">
-        <radio />
-        B、李斯
+        <radio value="{{info.topic_b}}"/>
+        B、{{info.topic_b}}
       </label>
       <label class="radio">
-        <radio />
-        C、张仪
+        <radio value="{{info.topic_c}}"/>
+        C、{{info.topic_c}}
       </label>
       <label class="radio">
-        <radio/>
-        D、王莽
+        <radio value="{{info.topic_d}}"/>
+        D、{{info.topic_d}}
       </label>
     </radio-group>
   </view>
@@ -41,10 +41,10 @@
 
   <view class="BottomBox">
     <view  class="bottomLift">
-    <van-icon custom-style="margin: 24rpx 12rpx 0 12rpx;" name="todo-list-o" />
-    <van-count-down class="timeCount" time="{{ time }}" format="HH:mm:ss" />
+    <!-- <van-icon custom-style="margin: 24rpx 12rpx 0 12rpx;" name="todo-list-o" /> -->
+    <!-- <van-count-down class="timeCount" time="{{ time }}" format="HH:mm:ss" /> -->
     <view class="bottomBtn">
-    <van-button custom-style="margin-right: 10rpx;" type="info" >上一题</van-button>
+    <!-- <van-button custom-style="margin-right: 10rpx;" type="info" >上一题</van-button> -->
     <van-button type="info" >下一题</van-button>
     </view>
   </view>

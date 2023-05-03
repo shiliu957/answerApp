@@ -1,12 +1,15 @@
+const {topic,topicPage} = require("../../api/login") 
 // pages/exam2/exam2.js
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    Loading : false,
-    time: 60 * 60 * 60 * 1000
+    type:'study',
+    uid: wx.getStorageSync('uid'),
+    info:null
+    // Loading : false,
+    // time: 60 * 60 * 60 * 1000
   },
 
   /**
@@ -20,7 +23,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-
+    this.begin()
   },
 
   /**
@@ -63,5 +66,18 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  begin() {
+    let type = this.data.type
+    let uid = this.data.uid
+    topic({uid,type}).then(res=>{
+      console.log(res,"返回的第一题是什么");
+      this.setData({
+        info:res
+      })
+    })
+  },
+  radioChange(a){
+    console.log(a,"wodianjide");
   }
 })
