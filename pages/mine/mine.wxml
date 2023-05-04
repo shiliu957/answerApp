@@ -1,7 +1,7 @@
 <view class="wrap">
   <view class="title" bindtap="getUserProfile" >
     <image class="image" src="{{userInfo.avatarUrl}}"></image>
-    <view class="name" >{{!!userInfo ? userInfo.nickName : "登录"}}</view>
+    <view class="name" >{{!!nickName ? nickName : "登录"}}</view>
   </view>
 
   <view class="box">

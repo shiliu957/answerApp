@@ -1,27 +1,24 @@
 // pages/mine/mine.js
 // 引入请求函数
-const {login,userinfo} = require("../../api/login") 
+const {login,userinfo,EditName} = require("../../api/login") 
+var app = getApp()
+var bus = app.globalData.bus
 
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    uid:null,
-    token:null,
     userInfo:null,
     activeName: 0,
-    islogin:false,
-    message:{
-      nickName:"",
-      gender:"",
-      language:"",
-      avatarUrl:"",
-      province:"",
-      city:"",     
-      tel:"",     
-    }
+    nickName:null,
   },
+  onLoad(){
+    this.setData({
+      userInfo:wx.getStorageSync('userInfo'),
+      nickName:wx.getStorageSync('nickName')
+    })
+ },
   AnswerRecord() {
     // alert(111);
     wx.navigateTo({
@@ -51,7 +48,7 @@ Page({
       activeName: e.detail
     })
   },
-  async getUserProfile(e) {
+   getUserProfile(e) {
     let userInfo = this.data.userInfo
     if (userInfo !== null) return
     var that = this
@@ -62,6 +59,10 @@ Page({
       that.setData({
         userInfo:user
       })
+      app.globalData.userInfo = user
+      console.log(app.globalData);
+      ;
+
         wx.login({
           success: res => {
             // 发送 res.code 到后台换取 openId, sessionKey, unionId
@@ -71,12 +72,14 @@ Page({
             }).then(res=>{
               wx.setStorageSync('token',res.token)
               wx.setStorageSync('uid',res.uid)
-              that.setData({
-                token:res.token,
-                uid:res.uid
-              })
-              userinfo({ data:that.data.userInfo,}).then(res=>{
+              userinfo({uid:res.uid}).then(res=>{
                 console.log(res,"fanhuide");
+                that.setData({
+                  nickName:res.nickName
+                })
+                // EditName({uid:res.id,nickName:"十六1"}).then(res=>{
+                //   console.log(res);
+                // })
               },
               (err)=>{
                 console.log("失败",res);

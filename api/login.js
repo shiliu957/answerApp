@@ -2,7 +2,8 @@ const { request } = require("../utils/request.js")
 
 const url = {
   login:'/api/member/login',
-  userinfo:'/api/member/userinfo',
+  userinfo:'/api/member/getUserinfo',
+  EditName:'/api/member/updateUserinfo',
   topic:'/api/topic/index',   //习题接口
   topicPage:'/api/topic/page',//上一提下一题接口
   submit:'/api/topic/submit',   //提交接口
@@ -15,6 +16,9 @@ function login(data){
 }
 function userinfo(data){
   return request(url.userinfo, 'POST', data)
+}
+function EditName(data){
+  return request(url.EditName, 'POST', data)
 }
 function video(data){
   return request(url.video, 'POST', data)
@@ -35,6 +39,7 @@ function submit(data){
 module.exports = {
   login,
   userinfo,
+  EditName,
   video,
   topic,
   topicPage,

@@ -8,7 +8,7 @@ Page({
   data: {
     percentage: 0 ,
     Loading : false,
-    time: 10 * 1000,
+    time: 60 * 60 * 1000,
     // ItemChecked:false,
     database:{
       A:false,

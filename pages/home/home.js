@@ -1,4 +1,8 @@
 import Dialog from '@vant/weapp/dialog/dialog';
+const {login,userinfo} = require("../../api/login") 
+var app = getApp()
+
+var bus = app.globalData.bus
 // pages/home/home.js
 Page({
 
@@ -6,7 +10,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    userInfo:null,
+    nickName:null
   },
     examClick(){
       wx.getStorage({key: 'uid'}).then(data=>{
@@ -18,10 +23,40 @@ Page({
           title: '提示',
           message: '请先登录金博纳电力题库',
         }).then(() => {
-          wx.switchTab({
-            url: '/pages/mine/mine'
-          })
+          this.login()
         });
+      })
+    },
+    login(){
+      var that = this
+      wx.getUserProfile({
+        desc: '用于完善信息',
+      success(res){
+        var user = res.userInfo
+        wx.setStorageSync('userInfo',user)
+          wx.login({
+            success: res => {
+              // 发送 res.code 到后台换取 openId, sessionKey, unionId
+              let code = res.code
+              login({
+                js_code: code,
+              }).then(res=>{
+                wx.setStorageSync('token',res.token)
+                wx.setStorageSync('uid',res.uid)
+                userinfo({uid:res.uid}).then(res=>{
+                  wx.setStorageSync('nickName',res.nickName)
+                },
+                (err)=>{
+                  console.log("失败",res);
+                })
+              },
+              (err)=>{
+                console.log("失败",res);
+              })
+            }
+          })
+  
+        }
       })
     },
     practiceClick() {
@@ -34,9 +69,7 @@ Page({
           title: '提示',
           message: '请先登录金博纳电力题库',
         }).then(() => {
-          wx.switchTab({
-            url: '/pages/mine/mine'
-          })
+          this.login()
         });
       })
     },
