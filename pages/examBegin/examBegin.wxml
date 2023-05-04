@@ -1,39 +1,38 @@
 <!--pages/exam2/exam2.wxml-->
 <view class="examBox">
+
   <view class="examBoxBorder">
     <span>单选题</span> 
       <!-- 答题进度条 -->
   <view>
-    <span style="color: rgba(255, 255, 255, 0);">25%</span>
-    <van-progress percentage="10"></van-progress>
-    <span style="color: rgba(255, 255, 255, 0);">25%</span>
+    <span style="color: rgba(255, 255, 255, 0);">占位</span>
+    <van-progress percentage="{{percentage}}" color="#32CD32"></van-progress>
+    <span style="color: rgba(255, 255, 255, 0);">占位</span>
   </view>
   </view>
-
-
 
   <view class="choiceTitle Position">
-    <text>【1】 下面哪位历史人物与秦朝无关</text>
+    <text>【{{info.id}}】 {{info.title}}</text>
   </view>
 
 <!-- 单选题 -->
   <view class="MultipleChoice Position">
-    <radio-group class="radio-group">
+    <radio-group class="radio-group"  bindchange="radioChange">
       <label class="radio">
-        <radio />
-        A、赵高
+        <radio value="A" checked="{{database.A}}"/>
+        A、{{info.topic_a}}
       </label>
       <label class="radio">
-        <radio />
-        B、李斯
+        <radio value="B" checked="{{database.B}}"/>
+        B、{{info.topic_b}}
       </label>
       <label class="radio">
-        <radio />
-        C、张仪
+        <radio value="C" checked="{{database.C}}"/>
+        C、{{info.topic_c}}
       </label>
       <label class="radio">
-        <radio/>
-        D、王莽
+        <radio value="D" checked="{{database.D}}"/>
+        D、{{info.topic_d}}
       </label>
     </radio-group>
   </view>
@@ -42,15 +41,16 @@
   <view class="BottomBox">
     <view  class="bottomLift">
     <van-icon custom-style="margin: 24rpx 12rpx 0 12rpx;" name="todo-list-o" />
-    <van-count-down class="timeCount" time="{{ time }}" format="HH:mm:ss" />
+    <van-count-down class="timeCount" time="{{ time }}" format="HH:mm:ss" bind:finish="finished"/>
     <view class="bottomBtn">
-    <van-button custom-style="margin-right: 10rpx;" type="info" >上一题</van-button>
-    <van-button type="info" >下一题</van-button>
+    <van-button custom-style="margin-right: 10rpx;" type="info" wx:if="{{info.id !== '1'}}"  bindtap="prePage">上一题</van-button>
+    <van-button type="info" wx:if="{{info.id !== '100'}}"  bindtap="nextPage">下一题</van-button>
+    <van-button custom-style="margin-left: 10rpx;" type="info" wx:if="{{info.id !== '100'}}" bindtap="commit">提交</van-button>
     </view>
   </view>
 
   </view>
 
 
-
+  <van-dialog id="van-dialog" />
 </view>

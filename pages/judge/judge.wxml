@@ -20,23 +20,30 @@
   <view class="MultipleChoice Position">
     <radio-group class="radio-group" bindchange="radioChange">
       <label class="radio">
-        <radio value="{{info.topic_a}}"/>
+        <radio value="A" checked="{{database.A}}"/>
         A、{{info.topic_a}}
       </label>
       <label class="radio">
-        <radio value="{{info.topic_b}}"/>
+        <radio value="B" checked="{{database.B}}"/>
         B、{{info.topic_b}}
       </label>
       <label class="radio">
-        <radio value="{{info.topic_c}}"/>
+        <radio value="C" checked="{{database.C}}"/>
         C、{{info.topic_c}}
       </label>
       <label class="radio">
-        <radio value="{{info.topic_d}}"/>
+        <radio value="D" checked="{{database.D}}"/>
         D、{{info.topic_d}}
       </label>
     </radio-group>
   </view>
+
+  <view class="prompt" wx:if="{{ItemChecked}}">
+  <text space="emsp">  提示 ：
+     {{info.content}}</text>
+
+  </view>
+
 
 
   <view class="BottomBox">
@@ -45,7 +52,7 @@
     <!-- <van-count-down class="timeCount" time="{{ time }}" format="HH:mm:ss" /> -->
     <view class="bottomBtn">
     <!-- <van-button custom-style="margin-right: 10rpx;" type="info" >上一题</van-button> -->
-    <van-button type="info" >下一题</van-button>
+    <van-button type="info" bindtap="nextPage">下一题</van-button>
     </view>
   </view>
 

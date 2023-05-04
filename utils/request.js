@@ -14,7 +14,7 @@ module.exports = {
                 url: _url,
                 data: data,
                 method: method,
-                header: head ? {"authorization": token} : {'content-type':'application/x-www-form-urlencoded',},
+                header: head ? {"authorization": token,'content-type':'application/x-www-form-urlencoded'} : {'content-type':'application/x-www-form-urlencoded',},
                 success: (res) => {
                     let { errorMsg } = res.data;
                     if(errorMsg==='success') {

@@ -5,7 +5,7 @@ const url = {
   userinfo:'/api/member/userinfo',
   topic:'/api/topic/index',   //习题接口
   topicPage:'/api/topic/page',//上一提下一题接口
-  check:'/api/topic/check',   //提交接口
+  submit:'/api/topic/submit',   //提交接口
   video:'/api/video/index',   //视频接口
   handout:'/api/handout/index',   //讲义列表接口
 
@@ -28,6 +28,9 @@ function topicPage(data){
 function handout(data){
   return request(url.handout, 'POST', data)
 }
+function submit(data){
+  return request(url.submit, 'POST', data)
+}
 
 module.exports = {
   login,
@@ -35,5 +38,6 @@ module.exports = {
   video,
   topic,
   topicPage,
-  handout
+  handout,
+  submit
 }

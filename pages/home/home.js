@@ -1,3 +1,4 @@
+import Dialog from '@vant/weapp/dialog/dialog';
 // pages/home/home.js
 Page({
 
@@ -8,14 +9,35 @@ Page({
 
   },
     examClick(){
-      wx.navigateTo({
-        url: '/pages/examBeginBtn/examBeginBtn',
+      wx.getStorage({key: 'uid'}).then(data=>{
+        wx.navigateTo({
+          url: '/pages/examBeginBtn/examBeginBtn',
+        })
+      }).catch(err=>{
+        Dialog.alert({
+          title: '提示',
+          message: '请先登录金博纳电力题库',
+        }).then(() => {
+          wx.switchTab({
+            url: '/pages/mine/mine'
+          })
+        });
       })
     },
     practiceClick() {
-      // alert(111);
-      wx.navigateTo({
-        url: '/pages/judge/judge'
+      wx.getStorage({key: 'uid'}).then(data=>{
+        wx.navigateTo({
+          url: '/pages/judge/judge'
+        })
+      }).catch(err=>{
+        Dialog.alert({
+          title: '提示',
+          message: '请先登录金博纳电力题库',
+        }).then(() => {
+          wx.switchTab({
+            url: '/pages/mine/mine'
+          })
+        });
       })
     },
 

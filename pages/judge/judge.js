@@ -5,6 +5,13 @@ Page({
    * 页面的初始数据
    */
   data: {
+    ItemChecked:false,
+    database:{
+      A:false,
+      B:false,
+      C:false,
+      D:false,
+    },
     type:'study',
     uid: wx.getStorageSync('uid'),
     info:null
@@ -71,13 +78,40 @@ Page({
     let type = this.data.type
     let uid = this.data.uid
     topic({uid,type}).then(res=>{
-      console.log(res,"返回的第一题是什么");
       this.setData({
         info:res
       })
     })
   },
+  nextPage(){
+    let type = this.data.type
+    let uid = this.data.uid
+    topicPage({
+      uid,
+      type,
+      topic_num:this.data.info.id * 1,
+      page:"next"
+    }).then(res=>{
+      this.setData({
+        info:res,
+        database:{
+          A:false,
+          B:false,
+          C:false,
+          D:false,
+        },
+        ItemChecked:false
+      })
+    })
+
+  },
   radioChange(a){
     console.log(a,"wodianjide");
+    if (this.data.info.answer === a.detail.value) {
+      return
+    }
+    this.setData({
+      ItemChecked:true
+    })
   }
 })

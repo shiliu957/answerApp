@@ -5,15 +5,13 @@
   </view>
 
   <view class="box">
-  <view style="height: 120rpx;" bindtap="AnswerRecord">
+  <!-- <view style="height: 120rpx;" bindtap="AnswerRecord">
     <p class="text">答题记录</p> <span class="span"><van-icon name="arrow" /></span>
-  </view>
+  </view> -->
   <view style="height: 120rpx;" bindtap="TestScore">
     <p class="text">考试成绩</p> <span class="span"><van-icon name="arrow" /></span>
   </view>
   <view>
-    uid:{{uid}},
-    token:{{token}}
   </view>
   <!-- <view style="height: 120rpx;" bindtap="MyVideos">
     <p class="text">我的视频</p> <span class="span"><van-icon name="arrow" /></span>
