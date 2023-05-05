@@ -6,6 +6,7 @@ const url = {
   EditName:'/api/member/updateUserinfo',
   topic:'/api/topic/index',   //习题接口
   topicPage:'/api/topic/page',//上一提下一题接口
+  getTopic:'/api/topic/getTopic',
   submit:'/api/topic/submit',   //提交接口
   video:'/api/video/index',   //视频接口
   handout:'/api/handout/index',   //讲义列表接口
@@ -35,6 +36,9 @@ function handout(data){
 function submit(data){
   return request(url.submit, 'POST', data)
 }
+function getTopic(data){
+  return request(url.getTopic, 'POST', data)
+}
 
 module.exports = {
   login,
@@ -44,5 +48,6 @@ module.exports = {
   topic,
   topicPage,
   handout,
-  submit
+  submit,
+  getTopic
 }

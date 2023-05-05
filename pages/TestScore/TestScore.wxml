@@ -2,14 +2,12 @@
 <view class="scoreBox" >
   <view class="score">
   <view class="box" >
-    <text class="scoreTitle" >电力知识考试
-    </text>
-    <text class="scoreDate">2023-04-26 12:00:00
+    <text class="scoreDate">{{updated_at}}
     </text>
   </view>
 
   <view class="scoreNumber" >
-    <span>100分</span>
+    <span>{{score}}分</span>
   </view>
 
   </view>

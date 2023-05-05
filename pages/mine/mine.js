@@ -1,5 +1,6 @@
 // pages/mine/mine.js
 // 引入请求函数
+import Toast from '@vant/weapp/toast/toast';
 const {login,userinfo,EditName} = require("../../api/login") 
 var app = getApp()
 var bus = app.globalData.bus
@@ -9,9 +10,11 @@ Page({
    * 页面的初始数据
    */
   data: {
+    show: false,
     userInfo:null,
     activeName: 0,
     nickName:null,
+    usename:null
   },
   onLoad(){
     this.setData({
@@ -27,9 +30,23 @@ Page({
   },
   TestScore() {
     // alert(111);
-    wx.navigateTo({
-      url: '/pages/TestScore/TestScore'
+    console.log("$$$$$$$$$$$");
+    wx.getStorage({key: 'uid'}).then(data=>{
+      wx.navigateTo({
+        url: '/pages/TestScore/TestScore'
+      })
+    }).catch(err=>{
+      Toast('请先登录金博纳电力题库');
+      // Dialog.alert({
+      //   title: '提示',
+      //   message: '请先登录金博纳电力题库',
+      // }).then(() => {
+      //   Toast('qingqing');
+      // });
     })
+
+
+
   },
   MyVideos() {
     // alert(111);
@@ -48,9 +65,31 @@ Page({
       activeName: e.detail
     })
   },
-   getUserProfile(e) {
+  EditName(){
+    this.setData({ show: true });
+  },
+  confirm() {
+    let uid = wx.getStorageSync('uid')
+    let nickName = this.data.usename
+    EditName({uid,nickName}).then(res=>{
+      userinfo({uid}).then(res=>{
+        wx.setStorageSync('nickName',nickName)
+        this.setData({
+          nickName:nickName,
+          usename:""
+        })
+      })
+    })
+  },
+  onClose() {
+    this.setData({ show: false });
+  },
+   getUserProfile() {
     let userInfo = this.data.userInfo
-    if (userInfo !== null) return
+    if (userInfo !== "") {
+      this.EditName()
+      return
+    }
     var that = this
     wx.getUserProfile({
       desc: '用于完善信息',
@@ -59,9 +98,7 @@ Page({
       that.setData({
         userInfo:user
       })
-      app.globalData.userInfo = user
-      console.log(app.globalData);
-      ;
+      wx.setStorageSync('userInfo',user)
 
         wx.login({
           success: res => {
@@ -74,8 +111,10 @@ Page({
               wx.setStorageSync('uid',res.uid)
               userinfo({uid:res.uid}).then(res=>{
                 console.log(res,"fanhuide");
+                let nickName = nickName === null ? "题友" : res.nickName
+                wx.setStorageSync('nickName',nickName)
                 that.setData({
-                  nickName:res.nickName
+                  nickName:nickName
                 })
                 // EditName({uid:res.id,nickName:"十六1"}).then(res=>{
                 //   console.log(res);

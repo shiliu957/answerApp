@@ -1,4 +1,5 @@
 const {topic,topicPage} = require("../../api/login") 
+import Toast from '@vant/weapp/toast/toast';
 // pages/exam2/exam2.js
 Page({
   /**
@@ -84,6 +85,10 @@ Page({
     })
   },
   nextPage(){
+    if (this.data.info.state==='final') {
+      Toast('已经是最后一题啦~~~');
+      return
+    }
     let type = this.data.type
     let uid = this.data.uid
     topicPage({

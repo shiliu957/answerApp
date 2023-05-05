@@ -1,18 +1,20 @@
 // pages/TestScore/TestScore.js
+const {userinfo} = require("../../api/login") 
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    score:0,
+    updated_at:null,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    this.getinfo()
   },
 
   /**
@@ -62,5 +64,16 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  getinfo(){
+    let uid = wx.getStorageSync('uid')
+    userinfo({uid}).then(res=>{
+      console.log(res,"回来的分数");
+      let {updated_at,score} = res
+      this.setData({
+        updated_at,
+        score
+      })
+    })
   }
 })

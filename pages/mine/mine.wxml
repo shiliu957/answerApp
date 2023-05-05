@@ -34,6 +34,21 @@
       </van-collapse-item>
     </van-collapse> -->
   </view>
-  
+  <van-dialog
+  use-slot
+  title="修改个人信息"
+  show="{{ show }}"
+  show-cancel-button
+  bind:close="onClose"
+  bind:confirm="confirm"
+>
+<van-field
+    model:value="{{ usename }}"
+    label="昵称"
+    placeholder="请输入昵称"
+    border="{{ false }}"
+  />
+</van-dialog>
+<van-toast id="van-toast" />
 </view>
 

@@ -1,11 +1,12 @@
 import Dialog from '@vant/weapp/dialog/dialog';
-const {topic,topicPage,submit} = require("../../api/login") 
+const {topic,topicPage,submit,getTopic} = require("../../api/login") 
 // pages/exam2/exam2.js
 Page({
   /**
    * 页面的初始数据
    */
   data: {
+    show: false,
     percentage: 0 ,
     Loading : false,
     time: 60 * 60 * 1000,
@@ -77,11 +78,55 @@ Page({
   onShareAppMessage() {
 
   },
+  inquire(id){
+    if (this.data.answer[id] === undefined) {
+      return
+    }
+    let answer = this.data.answer[id]
+    let database = {
+      A:false,
+      B:false,
+      C:false,
+      D:false,
+    }
+    database[answer] = true
+    this.setData({
+      database
+    })
+  },
+  onClickShow() {
+    this.setData({ show: true });
+  },
+
+  onClickHide() {
+    this.setData({ show: false });
+  },
+
+  itemClick(e){
+    // console.log(e.target.dataset.num,"$$$$$$$$$$$$$$$");
+    let id = e.target.dataset.num
+    getTopic({
+      id
+    }).then(res=>{
+      // console.log(res,"%%%%%%%%%%%%%%%%%");
+      this.setData({
+        info:res,
+        percentage: res.id * 1,
+        database:{
+          A:false,
+          B:false,
+          C:false,
+          D:false,
+        },
+      })
+      this.inquire(res.id)
+    })
+  },
   begin() {
     let type = this.data.type
     let uid = this.data.uid
     topic({uid,type}).then(res=>{
-      console.log(res,"这是考试返回的数据");
+      // console.log(res,"这是考试返回的数据");
       this.setData({
         info:res,
         percentage: res.id * 1
@@ -95,7 +140,7 @@ Page({
       answer,
       uid
     }).then(res=>{
-      console.log(res,"您的分数");
+      // console.log(res,"您的分数");
       Dialog.alert({
         title: '您的分数: ' + res.score,
         message: res.content,
@@ -115,7 +160,7 @@ Page({
       topic_num:this.data.info.id,
       page:"prev"
     }).then(res=>{
-      console.log(res,"考试的上一题");
+      // console.log(res,"考试的上一题");
       this.setData({
         info:res,
         percentage: res.id * 1,
@@ -126,6 +171,7 @@ Page({
           D:false,
         },
       })
+      this.inquire(res.id)
     })
   },
   nextPage(){
@@ -137,7 +183,7 @@ Page({
       topic_num:this.data.info.id,
       page:"next"
     }).then(res=>{
-      console.log(res,"考试的下一题");
+      // console.log(res,"考试的下一题");
       this.setData({
         info:res,
         percentage: res.id * 1,
@@ -148,6 +194,7 @@ Page({
           D:false,
         },
       })
+      this.inquire(res.id)
     })
   },
   radioChange(a){

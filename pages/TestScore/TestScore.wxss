@@ -10,10 +10,11 @@ page {
   border-radius: 10rpx;
 }
 .box{
-  padding-top: 30rpx;
+  padding-top: 54rpx;
 }
 .scoreTitle{
   font-size: 28rpx;
+  height: 28rpx;
   margin-left: 20rpx;
 }
 .scoreDate{
@@ -25,6 +26,6 @@ page {
   float: right;
   color: red;
   margin-right: 30rpx;
-  margin-top: -11%;
+  margin-top: -7%;
   font-size: 36rpx;
 }

@@ -52,10 +52,10 @@
     <!-- <van-count-down class="timeCount" time="{{ time }}" format="HH:mm:ss" /> -->
     <view class="bottomBtn">
     <!-- <van-button custom-style="margin-right: 10rpx;" type="info" >上一题</van-button> -->
-    <van-button type="info" bindtap="nextPage">下一题</van-button>
+    <van-button color="{{info.state==='final'?'#c0c0c0':'#1989fa'}}" bindtap="nextPage">下一题</van-button>
     </view>
   </view>
-
+  <van-toast id="van-toast" />
   </view>
 
 

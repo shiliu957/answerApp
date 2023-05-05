@@ -43,14 +43,23 @@
     <van-icon custom-style="margin: 24rpx 12rpx 0 12rpx;" name="todo-list-o" />
     <van-count-down class="timeCount" time="{{ time }}" format="HH:mm:ss" bind:finish="finished"/>
     <view class="bottomBtn">
+    <van-button icon="star-o" type="primary" custom-style="margin-right: 10rpx;" bindtap="onClickShow">答题卡</van-button>
     <van-button custom-style="margin-right: 10rpx;" type="info" wx:if="{{info.id !== '1'}}"  bindtap="prePage">上一题</van-button>
-    <van-button type="info" wx:if="{{info.id !== '100'}}"  bindtap="nextPage">下一题</van-button>
-    <van-button custom-style="margin-left: 10rpx;" type="info" wx:if="{{info.id !== '100'}}" bindtap="commit">提交</van-button>
+    <van-button custom-style="margin-right: 10rpx;" type="info" wx:if="{{info.state !== 'final'}}"  bindtap="nextPage">下一题</van-button>
+    <van-button custom-style="margin-right: 10rpx;" type="info" wx:if="{{info.state === 'final'}}" bindtap="commit">提交</van-button>
     </view>
   </view>
 
   </view>
 
-
+  <van-overlay show="{{ show }}" bind:click="onClickHide">
+  <view class="wrapper">
+    <view class="block">
+      <view class="items {{answer[index + 1]!== undefined?'active':''}}" wx:for="{{100}}" wx:key="index" data-num="{{item + 1}}" bindtap="itemClick">
+        {{item + 1}}
+      </view>
+    </view>
+  </view>
+</van-overlay>
   <van-dialog id="van-dialog" />
 </view>

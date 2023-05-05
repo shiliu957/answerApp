@@ -1,4 +1,31 @@
 /* pages/exam2/exam2.wxss */
+.items{
+  width: 55rpx;
+  margin: 0 10rpx;
+  border-radius: 25rpx;
+  height: 60rpx;
+  text-align: center; /*水平居中 */
+  line-height: 60rpx; /*垂直居中 */
+  background-color: #d4d6d9;
+}
+.active{  
+  background-color: #42e056;
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.block {
+  display: flex;
+  flex-wrap:wrap;
+  width: 80%;
+  height: 80%;
+  padding-top: 20rpx;
+  background-color: #fff;
+}
 .examBox{
   width: 100%;
   height: 100vh;

@@ -44,7 +44,8 @@ Page({
                 wx.setStorageSync('token',res.token)
                 wx.setStorageSync('uid',res.uid)
                 userinfo({uid:res.uid}).then(res=>{
-                  wx.setStorageSync('nickName',res.nickName)
+                  let nickName = nickName === null ? "题友" : res.nickName
+                  wx.setStorageSync('nickName',nickName)
                 },
                 (err)=>{
                   console.log("失败",res);
