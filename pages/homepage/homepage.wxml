@@ -1,0 +1,28 @@
+<view class="main">
+  <swiper class="swiper-wrap" indicator-dots="{{true}}" autoplay="{{true}}" interval="6000" duration="500" style="height: 480rpx;" >
+  <swiper-item>
+    <image class="sImage" src="https://img95.699pic.com/photo/50085/2705.jpg_wh300.jpg" mode="aspectFill"></image>
+  </swiper-item>
+  <swiper-item>
+    <image class="sImage" src="https://img95.699pic.com/photo/50087/0727.jpg_wh300.jpg" mode="aspectFill"></image>
+  </swiper-item>
+  <swiper-item>
+    <image class="sImage" src="https://photoos.mac89.com/180713/JPG-180713_329/ch2RXlxgEP_small.jpg" mode="aspectFill"></image>
+  </swiper-item>
+  <swiper-item>
+    <image class="sImage" src="https://img95.699pic.com/photo/40191/5589.jpg_wh300.jpg" mode="aspectFill"></image>
+  </swiper-item>
+</swiper>
+<view class="box">
+  <view class="items">
+    <text>风电运维学习平台</text>
+  </view>
+  <view class="items">
+    <text>光伏发电运维学习平台</text>
+  </view>
+  <view class="items">
+    <text>电网运维学习平台</text>
+  </view>
+</view>
+
+</view>

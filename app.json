@@ -13,7 +13,8 @@
     "pages/MyArticles/MyArticles",
     "pages/articleList/articleList",
     "pages/articleItem/articleItem",
-    "pages/videoList/videoList"
+    "pages/videoList/videoList",
+    "pages/homepage/homepage"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -28,7 +29,7 @@
     "backgroundColor": "#fff",
     "list": [
       {
-        "pagePath": "pages/home/home",
+        "pagePath": "pages/homepage/homepage",
         "text": "主页",
         "iconPath": "/static/images/tabBar/home1.png",
         "selectedIconPath": "/static/images/tabBar/home.png"
