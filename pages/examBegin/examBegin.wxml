@@ -30,7 +30,7 @@
         <radio value="C" checked="{{database.C}}"/>
         C、{{info.topic_c}}
       </label>
-      <label class="radio">
+      <label class="radio" wx:if="{{info.topic_d !== ''}}">
         <radio value="D" checked="{{database.D}}"/>
         D、{{info.topic_d}}
       </label>

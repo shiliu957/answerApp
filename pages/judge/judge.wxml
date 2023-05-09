@@ -1,14 +1,11 @@
 <!--pages/exam2/exam2.wxml-->
 <view class="examBox">
-  <view class="examBoxBorder">
+  <van-dropdown-menu>
+  <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
+</van-dropdown-menu>
+  <!-- <view class="examBoxBorder">
     <span>单选题</span> 
-      <!-- 答题进度条 -->
-  <!-- <view>
-    <span style="color: rgba(255, 255, 255, 0);">25%</span>
-    <van-progress percentage="10"></van-progress>
-    <span style="color: rgba(255, 255, 255, 0);">25%</span>
   </view> -->
-  </view>
 
 
 
@@ -31,7 +28,7 @@
         <radio value="C" checked="{{database.C}}"/>
         C、{{info.topic_c}}
       </label>
-      <label class="radio">
+      <label class="radio" wx:if="{{info.topic_d !== ''}}">
         <radio value="D" checked="{{database.D}}"/>
         D、{{info.topic_d}}
       </label>
@@ -50,9 +47,9 @@
     <view  class="bottomLift">
     <!-- <van-icon custom-style="margin: 24rpx 12rpx 0 12rpx;" name="todo-list-o" /> -->
     <!-- <van-count-down class="timeCount" time="{{ time }}" format="HH:mm:ss" /> -->
-    <view class="bottomBtn">
-    <!-- <van-button custom-style="margin-right: 10rpx;" type="info" >上一题</van-button> -->
-    <van-button color="{{info.state==='final'?'#c0c0c0':'#1989fa'}}" bindtap="nextPage">下一题</van-button>
+      <view class="bottomBtn">
+      <!-- <van-button custom-style="margin-right: 10rpx;" type="info" >上一题</van-button> -->
+      <van-button color="{{info.state==='final'?'#c0c0c0':'#1989fa'}}" bindtap="nextPage">下一题</van-button>
     </view>
   </view>
   <van-toast id="van-toast" />

@@ -14,13 +14,13 @@
   </swiper-item>
 </swiper>
 <view class="box">
-  <view class="items">
+  <view class="items" bindtap="gethome" data-name="风电">
     <text>风电运维学习平台</text>
   </view>
-  <view class="items">
+  <view class="items" bindtap="gethome" data-name="光伏">
     <text>光伏发电运维学习平台</text>
   </view>
-  <view class="items">
+  <view class="items" bindtap="gethome" data-name="电网">
     <text>电网运维学习平台</text>
   </view>
 </view>

@@ -77,5 +77,6 @@
   box-shadow: 0rpx 10rpx 10rpx rgb(110, 110, 110);
 }
 .Position{
+  margin-top: 40rpx;
   margin-left: 15rpx;
 }

@@ -62,5 +62,10 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  gethome(e){
+    wx.navigateTo({
+      url: '/pages/home/home?name='+e.currentTarget.dataset.name,
+    })
   }
 })

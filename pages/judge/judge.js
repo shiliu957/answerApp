@@ -15,7 +15,13 @@ Page({
     },
     type:'study',
     uid: wx.getStorageSync('uid'),
-    info:null
+    info:null,
+    option1: [
+      { text: '选择题', value: 0 },
+      { text: '填空题', value: 1 },
+      { text: '简答题', value: 2 },
+    ],
+    value1: 0,
     // Loading : false,
     // time: 60 * 60 * 60 * 1000
   },

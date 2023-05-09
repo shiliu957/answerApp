@@ -50,7 +50,12 @@
   padding-left: 20rpx;
   box-shadow: 0rpx 10rpx 10rpx rgb(110, 110, 110);
 }
+.van-dropdown-menu {
+  box-shadow: 0rpx 10rpx 10rpx rgb(110, 110, 110) !important;
+}
+
 .Position{
+  margin-top: 40rpx;
   margin-left: 15rpx;
 }
 .prompt{

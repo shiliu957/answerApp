@@ -20,22 +20,22 @@
   </view> -->
 
   <view class="box1 color" bindtap="practiceClick">
-			<p class="text">习题练习</p>
-			<span class="span">针对于考试的章节练习</span>
+			<p class="text">{{name}}-习题练习</p>
+			<span class="span">电网习题相关知识练习</span>
     <!-- <image src="../../static/homeIcons/书.png" mode="" style="width: 100rpx; height: 100rpx; " /> -->
 		</view>
 		<view class="box2 color" bindtap="examClick">
-			<p class="text">考试</p>
-			<span class="span">点击进行考试</span>
+			<p class="text">{{name}}-考试练习</p>
+			<span class="span">点击进行考试练习</span>
 			<!-- 			<img src="/static/homeIcons/考试.png" alt="" /> -->
 		</view>
 		<view class="box3 color" bindtap="videoList">
-			<p class="text">视频列表</p>
-			<span class="span">针对于考试的视频讲解</span>
+			<p class="text">{{name}}-视频列表</p>
+			<span class="span">电网相关视频列表</span>
 		</view>
 		<view class="box4 color" bindtap="articleList">
-			<p class="text">讲义列表</p>
-			<span class="span">本专业的最新文章</span>
+			<p class="text">{{name}}-讲义列表</p>
+			<span class="span">电网相关讲义列表</span>
 		</view>
 
 
