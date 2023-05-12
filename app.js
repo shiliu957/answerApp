@@ -5,6 +5,8 @@ App({
   },
   globalData: {
     userInfo: null,
-    bus: eventBus.eventBus
+    bus: eventBus.eventBus,
+    c_id:null,
+    itemName:""
   }
 })

@@ -59,15 +59,20 @@
   margin-left: 15rpx;
 }
 .prompt{
-  /* height: 104rpx; */
+  height: 360rpx;
   min-height: 100rpx;
   border: 1rpx solid black;
   border-radius: 30rpx;
   width: 90%;
   position: absolute;
-  bottom: 450rpx;
+  bottom: 182rpx;
   left: 5%;
   background-color: yellow;
+  overflow: hidden;
+}
+.promptBox {
+  height: 360rpx;
+  overflow: auto;
 }
 
 

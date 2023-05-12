@@ -76,7 +76,8 @@ Page({
   },
   getVideoList(){
     let page = this.data.page
-    video({page}).then(res=>{
+    let c_id = getApp().globalData.c_id
+    video({page,c_id}).then(res=>{
       console.log(res,"视频列表返回的数据");
       const {list,total} = res
       this.setData({

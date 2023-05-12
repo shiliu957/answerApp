@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    page:1,
     total:null,
     list:[],
     list1:[],
@@ -24,14 +25,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    handout({page:1}).then(res=>{
-      console.log(res,"后端返回的列表数据");
-      let {list,total} = res
-      this.setData({
-        list,
-        total
-      })
-    })
+    this.getArticleList()
   },
 
   /**
@@ -81,5 +75,17 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  getArticleList() {
+    let c_id = getApp().globalData.c_id
+    let page = this.data.page
+    handout({page,c_id}).then(res=>{
+      console.log(res,"后端返回的列表数据");
+      let {list,total} = res
+      this.setData({
+        list,
+        total
+      })
+    })
   }
 })

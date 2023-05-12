@@ -1,7 +1,7 @@
 <!--pages/exam2/exam2.wxml-->
 <view class="examBox">
   <van-dropdown-menu>
-  <van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
+  <van-dropdown-item model:value="{{ type }}" bindchange="handlerC" options="{{ option }}" />
 </van-dropdown-menu>
   <!-- <view class="examBoxBorder">
     <span>单选题</span> 
@@ -10,11 +10,11 @@
 
 
   <view class="choiceTitle Position">
-    <text>【{{info.id}}】 {{info.title}}</text>
+    <text>【{{index}}】 {{info.title}}</text>
   </view>
 
 <!-- 单选题 -->
-  <view class="MultipleChoice Position">
+  <view class="MultipleChoice Position" wx:if="{{type===0}}">
     <radio-group class="radio-group" bindchange="radioChange">
       <label class="radio">
         <radio value="A" checked="{{database.A}}"/>
@@ -35,9 +35,11 @@
     </radio-group>
   </view>
 
-  <view class="prompt" wx:if="{{ItemChecked}}">
-  <text space="emsp">  提示 ：
-     {{info.content}}</text>
+  <view class="prompt">
+  <view class="promptBox">
+    <text space="emsp"> {{info.content}}</text>
+  </view>
+
 
   </view>
 
@@ -48,7 +50,7 @@
     <!-- <van-icon custom-style="margin: 24rpx 12rpx 0 12rpx;" name="todo-list-o" /> -->
     <!-- <van-count-down class="timeCount" time="{{ time }}" format="HH:mm:ss" /> -->
       <view class="bottomBtn">
-      <!-- <van-button custom-style="margin-right: 10rpx;" type="info" >上一题</van-button> -->
+      <van-button color="{{index===1?'#c0c0c0':'#1989fa'}}" custom-style="margin-right: 10rpx;" type="info" bindtap="prePage">上一题</van-button>
       <van-button color="{{info.state==='final'?'#c0c0c0':'#1989fa'}}" bindtap="nextPage">下一题</van-button>
     </view>
   </view>

@@ -93,9 +93,18 @@ Page({
    */
   onLoad(options) {
     let {name} = options
-    this.setData(
-      {name}
-    )
+    console.log(name);
+    if (name===undefined) {
+      name = getApp().globalData.itemName
+      this.setData(
+        {name}
+      )
+      
+    } else{
+      this.setData(
+        {name}
+      )
+    }
   },
 
   /**

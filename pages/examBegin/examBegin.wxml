@@ -12,7 +12,7 @@
   </view>
 
   <view class="choiceTitle Position">
-    <text>【{{info.id}}】 {{info.title}}</text>
+    <text>【{{index}}】 {{info.title}}</text>
   </view>
 
 <!-- 单选题 -->
@@ -43,7 +43,7 @@
     <van-icon custom-style="margin: 24rpx 12rpx 0 12rpx;" name="todo-list-o" />
     <van-count-down class="timeCount" time="{{ time }}" format="HH:mm:ss" bind:finish="finished"/>
     <view class="bottomBtn">
-    <van-button icon="star-o" type="primary" custom-style="margin-right: 10rpx;" bindtap="onClickShow">答题卡</van-button>
+    <van-button wx:if="{{false}}" icon="star-o" type="primary" custom-style="margin-right: 10rpx;" bindtap="onClickShow">答题卡</van-button>
     <van-button custom-style="margin-right: 10rpx;" type="info" wx:if="{{info.id !== '1'}}"  bindtap="prePage">上一题</van-button>
     <van-button custom-style="margin-right: 10rpx;" type="info" wx:if="{{info.state !== 'final'}}"  bindtap="nextPage">下一题</van-button>
     <van-button custom-style="margin-right: 10rpx;" type="info" wx:if="{{info.state === 'final'}}" bindtap="commit">提交</van-button>

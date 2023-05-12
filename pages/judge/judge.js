@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    index:1,
     ItemChecked:false,
     database:{
       A:false,
@@ -13,15 +14,15 @@ Page({
       C:false,
       D:false,
     },
-    type:'study',
+    from:'study',
     uid: wx.getStorageSync('uid'),
     info:null,
-    option1: [
+    option: [
       { text: '选择题', value: 0 },
       { text: '填空题', value: 1 },
-      { text: '简答题', value: 2 },
+      { text: '论述题', value: 2 },
     ],
-    value1: 0,
+    type: 0,
     // Loading : false,
     // time: 60 * 60 * 60 * 1000
   },
@@ -82,28 +83,70 @@ Page({
 
   },
   begin() {
+    let from = this.data.from
     let type = this.data.type
     let uid = this.data.uid
-    topic({uid,type}).then(res=>{
+    let c_id = getApp().globalData.c_id
+    topic({uid,from,type,c_id}).then(res=>{
       this.setData({
         info:res
       })
     })
+  },
+  prePage() {
+    if (this.data.index===1) {
+      Toast('已经是第一题啦~~~');
+      return
+    }
+    let index = this.data.index
+    index--
+    let from = this.data.from
+    let c_id = getApp().globalData.c_id
+    let type = this.data.type
+    let uid = this.data.uid
+    topicPage({
+      uid,
+      from,
+      c_id,
+      type,
+      topic_num:this.data.info.id * 1,
+      page:"prev"
+    }).then(res=>{
+      this.setData({
+        index,
+        info:res,
+        database:{
+          A:false,
+          B:false,
+          C:false,
+          D:false,
+        },
+        ItemChecked:false
+      })
+    })
+
   },
   nextPage(){
     if (this.data.info.state==='final') {
       Toast('已经是最后一题啦~~~');
       return
     }
+    let index = this.data.index
+    index++
+    let from = this.data.from
+    let c_id = getApp().globalData.c_id
     let type = this.data.type
     let uid = this.data.uid
     topicPage({
       uid,
+      from,
+      c_id,
       type,
       topic_num:this.data.info.id * 1,
       page:"next"
     }).then(res=>{
       this.setData({
+        index,
         info:res,
         database:{
           A:false,
@@ -124,5 +167,11 @@ Page({
     this.setData({
       ItemChecked:true
     })
+  },
+  handlerC() {
+    this.setData({
+      index:1
+    })
+    this.begin()
   }
 })

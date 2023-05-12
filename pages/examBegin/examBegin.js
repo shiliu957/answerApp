@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    index:1,
     show: false,
     percentage: 0 ,
     Loading : false,
@@ -17,7 +18,7 @@ Page({
       C:false,
       D:false,
     },
-    type:'exam',
+    from:'exam',
     uid: wx.getStorageSync('uid'),
     info:null,
     answer:{},
@@ -105,8 +106,10 @@ Page({
   itemClick(e){
     // console.log(e.target.dataset.num,"$$$$$$$$$$$$$$$");
     let id = e.target.dataset.num
+    let c_id = getApp().globalData.c_id
     getTopic({
-      id
+      id,
+      c_id
     }).then(res=>{
       // console.log(res,"%%%%%%%%%%%%%%%%%");
       this.setData({
@@ -123,45 +126,53 @@ Page({
     })
   },
   begin() {
-    let type = this.data.type
+    let from = this.data.from
     let uid = this.data.uid
-    topic({uid,type}).then(res=>{
+    let c_id = getApp().globalData.c_id
+    topic({uid,from,c_id}).then(res=>{
       // console.log(res,"这是考试返回的数据");
       this.setData({
         info:res,
-        percentage: res.id * 1
+        percentage: res.id * 1,
       })
     })
   },
   commit(){
     let answer = JSON.stringify(this.data.answer)
     let uid = this.data.uid
+    let c_id = getApp().globalData.c_id
     submit({
       answer,
-      uid
+      uid,
+      c_id
     }).then(res=>{
       // console.log(res,"您的分数");
       Dialog.alert({
         title: '您的分数: ' + res.score,
         message: res.content,
       }).then(() => {
-        wx.switchTab({
+        wx.navigateTo({
           url: '/pages/home/home'
         })
       });
     })
   },
   prePage(){
-    let type = this.data.type
+    let index = this.data.index
+    index--
+    let from = this.data.from
     let uid = this.data.uid
+    let c_id = getApp().globalData.c_id
     topicPage({
       uid,
-      type,
+      from,
+      c_id,
       topic_num:this.data.info.id,
       page:"prev"
     }).then(res=>{
       // console.log(res,"考试的上一题");
       this.setData({
+        index,
         info:res,
         percentage: res.id * 1,
         database:{
@@ -175,16 +186,21 @@ Page({
     })
   },
   nextPage(){
-    let type = this.data.type
+    let index = this.data.index
+    index++
+    let from = this.data.from
     let uid = this.data.uid
+    let c_id = getApp().globalData.c_id
     topicPage({
       uid,
-      type,
+      from,
+      c_id,
       topic_num:this.data.info.id,
       page:"next"
     }).then(res=>{
       // console.log(res,"考试的下一题");
       this.setData({
+        index,
         info:res,
         percentage: res.id * 1,
         database:{
@@ -212,15 +228,17 @@ Page({
     console.log("倒计时结束");
     let answer = JSON.stringify(this.data.answer)
     let uid = this.data.uid
+    let c_id = getApp().globalData.c_id
     submit({
       answer,
-      uid
+      uid,
+      c_id
     }).then(res=>{
       Dialog.alert({
         title: '考试时间到了，您的分数: ' + res.score,
         message: res.content,
       }).then(() => {
-        wx.switchTab({
+        wx.navigateTo({
           url: '/pages/home/home'
         })
       });

@@ -1,4 +1,5 @@
 // pages/homepage/homepage.js
+
 Page({
 
   /**
@@ -64,6 +65,8 @@ Page({
 
   },
   gethome(e){
+    getApp().globalData.c_id=e.currentTarget.dataset.c_id
+    getApp().globalData.itemName=e.currentTarget.dataset.name
     wx.navigateTo({
       url: '/pages/home/home?name='+e.currentTarget.dataset.name,
     })
