@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/homepage/homepage",
     "pages/home/home",
     "pages/category/category",
     "pages/mine/mine",
@@ -13,8 +14,7 @@
     "pages/MyArticles/MyArticles",
     "pages/articleList/articleList",
     "pages/articleItem/articleItem",
-    "pages/videoList/videoList",
-    "pages/homepage/homepage"
+    "pages/videoList/videoList"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -30,7 +30,7 @@
     "list": [
       {
         "pagePath": "pages/homepage/homepage",
-        "text": "主页",
+        "text": "首页",
         "iconPath": "/static/images/tabBar/home1.png",
         "selectedIconPath": "/static/images/tabBar/home.png"
       },

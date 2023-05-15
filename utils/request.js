@@ -21,6 +21,7 @@ module.exports = {
                       resolve(res.data.data);
                       wx.hideLoading();
                     }else {
+                      reject(res.data.errorCode)
                       wx.showToast({
                         title: '数据请求错误',
                       })

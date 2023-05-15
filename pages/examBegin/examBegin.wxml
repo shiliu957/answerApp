@@ -1,5 +1,6 @@
 <!--pages/exam2/exam2.wxml-->
-<view class="examBox">
+<van-empty description="暂无数据" wx:if="{{error===1001}}"/>
+<view class="examBox" wx:else>
 
   <view class="examBoxBorder">
     <span>单选题</span> 

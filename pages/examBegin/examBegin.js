@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    error:1001,
     index:1,
     show: false,
     percentage: 0 ,
@@ -28,14 +29,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    this.begin()
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-    this.begin()
+
   },
 
   /**
@@ -134,6 +135,11 @@ Page({
       this.setData({
         info:res,
         percentage: res.id * 1,
+        error:0
+      })
+    },e=>{
+      this.setData({
+        error:e
       })
     })
   },
@@ -151,8 +157,8 @@ Page({
         title: '您的分数: ' + res.score,
         message: res.content,
       }).then(() => {
-        wx.navigateTo({
-          url: '/pages/home/home'
+        wx.switchTab({
+          url: '/pages/homepage/homepage'
         })
       });
     })
@@ -238,8 +244,8 @@ Page({
         title: '考试时间到了，您的分数: ' + res.score,
         message: res.content,
       }).then(() => {
-        wx.navigateTo({
-          url: '/pages/home/home'
+        wx.switchTab({
+          url: '/pages/homepage/homepage'
         })
       });
     })

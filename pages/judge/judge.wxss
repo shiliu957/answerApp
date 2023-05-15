@@ -59,7 +59,7 @@
   margin-left: 15rpx;
 }
 .prompt{
-  height: 360rpx;
+  height: 30%;
   min-height: 100rpx;
   border: 1rpx solid black;
   border-radius: 30rpx;
@@ -71,8 +71,38 @@
   overflow: hidden;
 }
 .promptBox {
-  height: 360rpx;
+  height: 95%;
+  width: 90%;
   overflow: auto;
+  margin-top: 20rpx;
+  margin-left: 40rpx;
+}
+.choiceTitle{
+  height: 78vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.prompt1{
+  flex:1;
+  height: 68%;
+  min-height: 100rpx;
+  border: 1rpx solid black;
+  border-radius: 30rpx;
+  width: 90%;
+  /* position: absolute; */
+  /* bottom: 182rpx; */
+  margin-top: 30rpx;
+  margin-left: 4%;
+  background-color: yellow;
+  overflow: hidden;
+}
+.promptBox1 {
+  height: 95%;
+  width: 90%;
+  overflow: auto;
+  margin-top: 20rpx;
+  margin-left: 40rpx;
 }
 
 

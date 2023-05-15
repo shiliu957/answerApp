@@ -8,6 +8,7 @@
     "van-progress":"@vant/weapp/progress/index",
     "van-count-down":"@vant/weapp/count-down/index",
     "van-dialog": "@vant/weapp/dialog/index",
-    "van-overlay": "@vant/weapp/overlay/index"
+    "van-overlay": "@vant/weapp/overlay/index",
+    "van-empty": "@vant/weapp/empty/index"
   }
 }

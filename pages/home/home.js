@@ -10,9 +10,19 @@ Page({
    * 页面的初始数据
    */
   data: {
+    // active: 0,
     name:null,
     userInfo:null,
-    nickName:null
+    nickName:null,
+    // icon: {
+    //   normal: '../../static/images/tabBar/home.png',
+    //   active: '../../static/images/tabBar/home1.png',
+    // },
+  },
+  onChange(event) {
+    console.log(event,"%%%%%%%%%%%%%%%%%");
+    // event.detail 的值为当前选中项的索引
+    this.setData({ active: event.detail });
   },
     examClick(){
       wx.getStorage({key: 'uid'}).then(data=>{
@@ -30,9 +40,11 @@ Page({
     },
     login(){
       var that = this
+      console.log("%%%%%%%%%%%%%%%%%%%%");
       wx.getUserProfile({
         desc: '用于完善信息',
       success(res){
+
         var user = res.userInfo
         wx.setStorageSync('userInfo',user)
           wx.login({

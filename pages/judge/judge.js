@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    error:1001,
     index:1,
     ItemChecked:false,
     database:{
@@ -31,14 +32,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    this.begin()
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady() {
-    this.begin()
+
   },
 
   /**
@@ -82,14 +83,33 @@ Page({
   onShareAppMessage() {
 
   },
+  inquire(answer){
+    let database = {
+      A:false,
+      B:false,
+      C:false,
+      D:false,
+    }
+    database[answer] = true
+    this.setData({
+      database
+    })
+  },
   begin() {
     let from = this.data.from
     let type = this.data.type
     let uid = this.data.uid
     let c_id = getApp().globalData.c_id
     topic({uid,from,type,c_id}).then(res=>{
+      // console.log(res,"###########################");
+      this.inquire(res.answer)
       this.setData({
-        info:res
+        info:res,
+        error:0
+      })
+    },e=>{
+      this.setData({
+        error:e
       })
     })
   },
@@ -112,6 +132,7 @@ Page({
       topic_num:this.data.info.id * 1,
       page:"prev"
     }).then(res=>{
+
       this.setData({
         index,
         info:res,
@@ -123,6 +144,7 @@ Page({
         },
         ItemChecked:false
       })
+      this.inquire(res.answer)
     })
 
   },
@@ -156,17 +178,18 @@ Page({
         },
         ItemChecked:false
       })
+      this.inquire(res.answer)
     })
 
   },
   radioChange(a){
-    console.log(a,"wodianjide");
-    if (this.data.info.answer === a.detail.value) {
-      return
-    }
-    this.setData({
-      ItemChecked:true
-    })
+    // console.log(a,"wodianjide");
+    // if (this.data.info.answer === a.detail.value) {
+    //   return
+    // }
+    // this.setData({
+    //   ItemChecked:true
+    // })
   },
   handlerC() {
     this.setData({

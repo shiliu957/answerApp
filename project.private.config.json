@@ -10,27 +10,6 @@
       "list": [
         {
           "name": "",
-          "pathName": "pages/authorize/authorize",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/home/home",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
-          "pathName": "pages/mine/mine",
-          "query": "",
-          "launchMode": "default",
-          "scene": null
-        },
-        {
-          "name": "",
           "pathName": "pages/homepage/homepage",
           "query": "",
           "launchMode": "default",

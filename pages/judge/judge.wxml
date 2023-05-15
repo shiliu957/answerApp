@@ -1,16 +1,23 @@
 <!--pages/exam2/exam2.wxml-->
-<view class="examBox">
+<van-empty description="暂无数据" wx:if="{{error===1001}}"/>
+<view class="examBox" wx:else>
   <van-dropdown-menu>
   <van-dropdown-item model:value="{{ type }}" bindchange="handlerC" options="{{ option }}" />
 </van-dropdown-menu>
   <!-- <view class="examBoxBorder">
     <span>单选题</span> 
   </view> -->
+  <view class=" Position" wx:if="{{type!==2}}" >
+    <text space="emsp">【{{index}}】 {{info.title}}</text>
+  </view>
 
-
-
-  <view class="choiceTitle Position">
-    <text>【{{index}}】 {{info.title}}</text>
+  <view class="choiceTitle Position" wx:if="{{type===2}}">
+    <text space="emsp">【{{index}}】 {{info.title}}</text>
+    <view class="prompt1">
+  <view class="promptBox1">
+    <text space="emsp">{{info.content}}</text>
+  </view>
+  </view>
   </view>
 
 <!-- 单选题 -->
@@ -35,13 +42,11 @@
     </radio-group>
   </view>
 
-  <view class="prompt">
+  <view class="prompt" wx:if="{{type!==2}}">
   <view class="promptBox">
-    <text space="emsp"> {{info.content}}</text>
+    <text space="emsp">{{info.content}}</text>
   </view>
-
-
-  </view>
+</view>
 
 
 

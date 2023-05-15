@@ -1,5 +1,5 @@
-<!-- <van-empty description="暂无数据" wx:if="{{list.length === 0}}" /> -->
-<view>
+<van-empty description="暂无数据" wx:if="{{list.length === 0}}" />
+<view wx:else>
   <view class="video" wx:for="{{list}}" catchtap="MyVideo" data-item="{{item.video_url}}" wx:key="index">
     <image data-item="{{item.video_url}}" class="covervideo" src="{{item.cover_url}}"></image>
     <view class="box" data-item="{{item.video_url}}">
